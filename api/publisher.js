@@ -7,7 +7,9 @@ import path from "path";
 
 const DEFAULT_APPS_SCRIPT_URL =
   process.env.GOOGLE_APPS_SCRIPT_URL ||
-  "https://script.google.com/macros/s/AKfycbw8NhfkPJGeYu4NAaisxN3FHaWmAVlZTmEO2x1CsBirRPvt5pQjI5zNv3qVXqEA2W1a/exec";
+  process.env.GOOGLE_APPS_SCRIPT_URLlinkedIn ||
+  process.env.GOOGLE_APPS_SCRIPT_URL_LINKEDIN ||
+  "https://script.google.com/macros/s/AKfycbyO4AzoxaoBU99WFQUDNbRV-4r6UmBTLPSsgeZiCS4T2AyObnUfNcYhLv-gcVnAMYgRKg/exec";
 
 const DEFAULT_SPREADSHEET_ID =
   process.env.GOOGLE_SPREADSHEET_ID || "1S-ApP83X9Y1-nXwim0tDNGn72wuhVn4PSbaWkcXlH48";
