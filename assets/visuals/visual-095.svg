@@ -1,136 +1,123 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
   <defs>
     <linearGradient id="bgGradD" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#060C18"/>
-      <stop offset="50%" stop-color="#0B1A2C"/>
-      <stop offset="100%" stop-color="#14263E"/>
-    </linearGradient>
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
-      <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
+      <stop offset="0%" stop-color="#07111F"/>
+      <stop offset="50%" stop-color="#0B192A"/>
+      <stop offset="100%" stop-color="#15263B"/>
     </linearGradient>
   </defs>
 
   <rect width="1200" height="1200" fill="url(#bgGradD)"/>
 
-  <!-- Frame -->
-  <rect x="40" y="40" width="1120" height="1120" rx="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
-  <line x1="40" y1="150" x2="1160" y2="150" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+  <!-- Accents -->
+  <circle cx="200" cy="800" r="260" fill="#20B8F5" opacity="0.1" filter="blur(80px)"/>
+
+  <!-- Outer frame -->
+  <rect x="40" y="40" width="1120" height="1120" rx="16" fill="none" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
+  <line x1="40" y1="140" x2="1160" y2="140" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
 
   <!-- Header -->
-  <g transform="translate(80, 70)">
-    <polygon points="0,0 28,0 42,22 28,45 0,45 14,22" fill="#0066CC"/>
-    <circle cx="21" cy="22" r="7" fill="#FF6B00"/>
-    <text x="60" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="2">INDUS</text>
-    <text x="60" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#94A3B8" letter-spacing="2.5">ROBOTICS INNOVATION</text>
+  <g transform="translate(80, 68)">
+    <polygon points="0,0 26,0 38,20 26,40 0,40 12,20" fill="#0879E8"/>
+    <circle cx="19" cy="20" r="6" fill="#20B8F5"/>
+    <text x="56" y="22" font-family="'Manrope', sans-serif" font-weight="900" font-size="22" fill="#F4F7FB" letter-spacing="2">INDUS</text>
+    <text x="56" y="37" font-family="'Inter', sans-serif" font-weight="600" font-size="11" fill="#A8B6C8" letter-spacing="2">ROBOTICS INNOVATION</text>
   </g>
 
-  <g transform="translate(820, 80)">
-    <rect x="0" y="0" width="130" height="32" rx="16" fill="rgba(0,102,204,0.2)" stroke="#0066CC" stroke-width="1"/>
-    <text x="65" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="12" fill="#60A5FA" text-anchor="middle">INDUS-LI-095</text>
+  <!-- Badges -->
+  <g transform="translate(800, 75)">
+    <rect x="0" y="0" width="140" height="34" rx="17" fill="rgba(8, 121, 232, 0.2)" stroke="#0879E8" stroke-width="1.2"/>
+    <text x="70" y="22" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="13" fill="#20B8F5" text-anchor="middle">INDUS-LI-095</text>
     
-    <rect x="145" y="0" width="155" height="32" rx="16" fill="rgba(168,85,247,0.15)" stroke="#A855F7" stroke-width="1"/>
-    <text x="222" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="12" fill="#C084FC" text-anchor="middle">FUTURE ARCHITECTURE</text>
+    <rect x="155" y="0" width="165" height="34" rx="17" fill="rgba(32, 184, 245, 0.15)" stroke="#20B8F5" stroke-width="1.2"/>
+    <text x="237" y="22" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#20B8F5" text-anchor="middle">FUTURE ARCHITECTURE</text>
   </g>
 
-  <!-- Category Tag -->
-  <g transform="translate(80, 190)">
-    <rect x="0" y="0" width="360" height="34" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    <circle cx="16" cy="17" r="5" fill="#A855F7"/>
-    <text x="32" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="12" fill="#94A3B8" letter-spacing="1">ENGINEERING SERVICES & DIGITAL TOOLS</text>
+  <!-- Category Pill -->
+  <g transform="translate(80, 180)">
+    <rect x="0" y="0" width="360" height="32" rx="8" fill="#101F33" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1"/>
+    <circle cx="16" cy="16" r="5" fill="#20B8F5"/>
+    <text x="32" y="21" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#A8B6C8" letter-spacing="1">ROBOTICS INNOVATION</text>
   </g>
 
   <!-- Main Headline -->
-  <text x="80" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="42" fill="#FFFFFF">
+  <text x="80" y="270" font-family="'Manrope', sans-serif" font-weight="900" font-size="44" fill="#F4F7FB">
     <tspan x="80" dy="0">Automation Business Case Modeling</tspan>
-    <tspan x="80" dy="50" fill="#38BDF8"></tspan>
+    <tspan x="80" dy="54" fill="#20B8F5"></tspan>
   </text>
 
-  <!-- Center Artwork: Connected Network Topology / Edge-to-Cloud Flow -->
-  <g transform="translate(80, 385)">
-    <rect width="1040" height="445" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-    <text x="40" y="45" font-family="monospace" font-size="12" fill="#64748B" letter-spacing="1.5">DISTRIBUTED ROBOTICS TOPOLOGY // HARD REAL-TIME TO CLOUD</text>
+  <!-- Distributed Control Topology -->
+  <g transform="translate(80, 380)">
+    <rect width="1040" height="450" rx="16" fill="#101F33" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
 
-    <!-- Network Nodes Layout -->
-    <g transform="translate(80, 100)">
-      <!-- Node 1: Edge Sensors -->
-      <g transform="translate(0, 50)">
-        <rect width="200" height="150" rx="12" fill="#0B1A2C" stroke="#38BDF8" stroke-width="1.5"/>
-        <text x="100" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" text-anchor="middle">Smart Sensors</text>
-        <text x="100" y="70" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">3D Vision / LiDAR / F/T</text>
-        <text x="100" y="115" font-family="monospace" font-size="11" fill="#38BDF8" text-anchor="middle">&lt; 1 ms Data Latch</text>
-      </g>
-
-      <!-- Connection 1 -> 2 -->
-      <line x1="200" y1="125" x2="280" y2="125" stroke="#38BDF8" stroke-width="2.5" stroke-dasharray="6 4"/>
-
-      <!-- Node 2: On-Premises Edge NPU -->
-      <g transform="translate(280, 50)">
-        <rect width="200" height="150" rx="12" fill="#0B1A2C" stroke="#A855F7" stroke-width="1.5"/>
-        <text x="100" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" text-anchor="middle">Edge AI NPU</text>
-        <text x="100" y="70" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Neural Segmentation</text>
-        <text x="100" y="115" font-family="monospace" font-size="11" fill="#C084FC" text-anchor="middle">200 FPS Local Inference</text>
-      </g>
-
-      <!-- Connection 2 -> 3 -->
-      <line x1="480" y1="125" x2="560" y2="125" stroke="#A855F7" stroke-width="2.5" stroke-dasharray="6 4"/>
-
-      <!-- Node 3: Hard Real-Time Controller -->
-      <g transform="translate(560, 50)">
-        <rect width="200" height="150" rx="12" fill="#0B1A2C" stroke="#10B981" stroke-width="2"/>
-        <text x="100" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" text-anchor="middle">RT Controller</text>
-        <text x="100" y="70" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">EtherCAT Master Loop</text>
-        <text x="100" y="115" font-family="monospace" font-size="11" fill="#34D399" text-anchor="middle">250 µs Cycle &lt; 50ns Jitter</text>
-      </g>
-
-      <!-- Connection 3 -> 4 -->
-      <line x1="760" y1="125" x2="840" y2="125" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6 4"/>
-
-      <!-- Node 4: Cloud TSN / MES -->
-      <g transform="translate(840, 50)">
-        <rect width="180" height="150" rx="12" fill="#0B1A2C" stroke="#FF6B00" stroke-width="1.5"/>
-        <text x="90" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="15" fill="#FFFFFF" text-anchor="middle">Cloud / MES</text>
-        <text x="90" y="70" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">TSN + OPC UA FX</text>
-        <text x="90" y="115" font-family="monospace" font-size="11" fill="#FDBA74" text-anchor="middle">Global Fleet Telemetry</text>
-      </g>
+    <!-- 3 Connected Nodes -->
+    <g transform="translate(60, 100)">
+      <rect width="260" height="200" rx="12" fill="#15263B" stroke="#0879E8" stroke-width="1.5"/>
+      <text x="24" y="40" font-family="'Manrope', sans-serif" font-size="18" font-weight="800" fill="#F4F7FB">Edge RT-Kernel</text>
+      <text x="24" y="65" font-family="'Inter', sans-serif" font-size="12" fill="#A8B6C8">Linux PREEMPT_RT</text>
+      <line x1="24" y1="85" x2="236" y2="85" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1"/>
+      <text x="24" y="120" font-family="'JetBrains Mono', monospace" font-size="12" fill="#20B8F5">Jitter: &lt; 20 µs</text>
+      <text x="24" y="150" font-family="'JetBrains Mono', monospace" font-size="12" fill="#16B981">EtherCAT Master 1kHz</text>
     </g>
 
-    <text x="40" y="415" font-family="monospace" font-size="11" fill="#64748B">PROTOCOL MAPPING: SENSORS (IO-LINK) -> NPU (PCIe) -> CONTROLLER (EtherCAT) -> MES (OPC UA)</text>
+    <line x1="320" y1="200" x2="390" y2="200" stroke="#20B8F5" stroke-width="3" stroke-dasharray="6 4"/>
+
+    <g transform="translate(390, 100)">
+      <rect width="260" height="200" rx="12" fill="#15263B" stroke="#20B8F5" stroke-width="1.5"/>
+      <text x="24" y="40" font-family="'Manrope', sans-serif" font-size="18" font-weight="800" fill="#F4F7FB">DDS Middleware</text>
+      <text x="24" y="65" font-family="'Inter', sans-serif" font-size="12" fill="#A8B6C8">ROS 2 Distributed QoS</text>
+      <line x1="24" y1="85" x2="236" y2="85" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1"/>
+      <text x="24" y="120" font-family="'JetBrains Mono', monospace" font-size="12" fill="#20B8F5">micro-ROS Bridge</text>
+      <text x="24" y="150" font-family="'JetBrains Mono', monospace" font-size="12" fill="#16B981">Deterministic Latch</text>
+    </g>
+
+    <line x1="650" y1="200" x2="720" y2="200" stroke="#FF8A30" stroke-width="3" stroke-dasharray="6 4"/>
+
+    <g transform="translate(720, 100)">
+      <rect width="260" height="200" rx="12" fill="#15263B" stroke="#FF8A30" stroke-width="1.5"/>
+      <text x="24" y="40" font-family="'Manrope', sans-serif" font-size="18" font-weight="800" fill="#F4F7FB">Physics Digital Twin</text>
+      <text x="24" y="65" font-family="'Inter', sans-serif" font-size="12" fill="#A8B6C8">Bidirectional Telemetry</text>
+      <line x1="24" y1="85" x2="236" y2="85" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1"/>
+      <text x="24" y="120" font-family="'JetBrains Mono', monospace" font-size="12" fill="#20B8F5">OPC UA Server Sync</text>
+      <text x="24" y="150" font-family="'JetBrains Mono', monospace" font-size="12" fill="#FF8A30">Sub-mm Path Offset</text>
+    </g>
+
+    <text x="40" y="420" font-family="'JetBrains Mono', monospace" font-size="11" fill="#A8B6C8">DISTRIBUTED ROBOTICS TOPOLOGY // HARD REAL-TIME TO CLOUD SYNC</text>
   </g>
 
-  <!-- 4 Metrics Cards -->
+  <!-- Metrics Grid -->
   <g transform="translate(80, 860)">
     
     <g transform="translate(0, 0)">
-      <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Financial Outputs</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">Estimated payback period, net present value (NPV), and cash flow</text>
-      <line x1="24" y1="105" x2="80" y2="105" stroke="#0066CC" stroke-width="2"/>
+      <rect width="245" height="120" rx="12" fill="#101F33" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
+      <text x="20" y="34" font-family="'Inter', sans-serif" font-size="12" fill="#A8B6C8" font-weight="600">Financial Outputs</text>
+      <text x="20" y="78" font-family="'JetBrains Mono', monospace" font-size="20" fill="#0879E8" font-weight="700">Estimated payback period, net present value (NPV), and cash flow</text>
+      <line x1="20" y1="98" x2="60" y2="98" stroke="#0879E8" stroke-width="2.5"/>
     </g>
-    <g transform="translate(266, 0)">
-      <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Input Variables</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">Labor rates, shift hours, scrap rates, maintenance factors</text>
-      <line x1="24" y1="105" x2="80" y2="105" stroke="#FF6B00" stroke-width="2"/>
+    <g transform="translate(265, 0)">
+      <rect width="245" height="120" rx="12" fill="#101F33" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
+      <text x="20" y="34" font-family="'Inter', sans-serif" font-size="12" fill="#A8B6C8" font-weight="600">Input Variables</text>
+      <text x="20" y="78" font-family="'JetBrains Mono', monospace" font-size="20" fill="#20B8F5" font-weight="700">Labor rates, shift hours, scrap rates, maintenance factors</text>
+      <line x1="20" y1="98" x2="60" y2="98" stroke="#20B8F5" stroke-width="2.5"/>
     </g>
-    <g transform="translate(532, 0)">
-      <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Depreciation</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">Includes capital allowance and depreciation models</text>
-      <line x1="24" y1="105" x2="80" y2="105" stroke="#10B981" stroke-width="2"/>
+    <g transform="translate(530, 0)">
+      <rect width="245" height="120" rx="12" fill="#101F33" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
+      <text x="20" y="34" font-family="'Inter', sans-serif" font-size="12" fill="#A8B6C8" font-weight="600">Depreciation</text>
+      <text x="20" y="78" font-family="'JetBrains Mono', monospace" font-size="20" fill="#FF8A30" font-weight="700">Includes capital allowance and depreciation models</text>
+      <line x1="20" y1="98" x2="60" y2="98" stroke="#FF8A30" stroke-width="2.5"/>
     </g>
-    <g transform="translate(798, 0)">
-      <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Reporting</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">Detailed business case PDF report export</text>
-      <line x1="24" y1="105" x2="80" y2="105" stroke="#F59E0B" stroke-width="2"/>
+    <g transform="translate(795, 0)">
+      <rect width="245" height="120" rx="12" fill="#101F33" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
+      <text x="20" y="34" font-family="'Inter', sans-serif" font-size="12" fill="#A8B6C8" font-weight="600">Reporting</text>
+      <text x="20" y="78" font-family="'JetBrains Mono', monospace" font-size="20" fill="#16B981" font-weight="700">Detailed business case PDF report export</text>
+      <line x1="20" y1="98" x2="60" y2="98" stroke="#16B981" stroke-width="2.5"/>
     </g>
   </g>
 
   <!-- Footer -->
   <g transform="translate(80, 1050)">
-    <line x1="0" y1="0" x2="1040" y2="0" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-    <text x="0" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748B" font-weight="600">ADVANCED ROBOTICS R&amp;D // INNOVATION BRIEF</text>
-    <text x="1040" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#38BDF8" font-weight="700" text-anchor="end">indusrobotics.com</text>
+    <line x1="0" y1="0" x2="1040" y2="0" stroke="rgba(148, 163, 184, 0.18)" stroke-width="1.5"/>
+    <text x="0" y="38" font-family="'Inter', sans-serif" font-size="13" fill="#A8B6C8" font-weight="600">INNOVATION BLUEPRINT // EMBEDDED KINEMATIC COMPUTING</text>
+    <text x="1040" y="38" font-family="'JetBrains Mono', monospace" font-size="13" fill="#20B8F5" font-weight="700" text-anchor="end">indusrobotics.com</text>
   </g>
 </svg>
