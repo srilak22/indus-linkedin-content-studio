@@ -101,7 +101,7 @@
       width: 100%;
       flex: 1;
       display: grid;
-      grid-template-columns: 290px 1fr 350px;
+      grid-template-columns: 290px 1fr 360px;
       gap: 24px;
       align-items: start;
     }
@@ -366,7 +366,7 @@
       margin-bottom: 12px;
     }
     
-    /* Structured Technical Highlights Box inside card */
+    /* Structured Technical Highlights Box */
     .tech-highlights-box {
       background: #F8FAFC;
       border: 1px solid #E2E8F0;
@@ -539,19 +539,63 @@
     .rubric-lbl { color: var(--text-secondary); }
     .rubric-pts { text-align: right; font-family: var(--font-mono); font-weight: 700; color: #fff; }
 
-    /* Workflow status */
-    .status-select-control {
+    /* Auto-Publisher Section */
+    .publisher-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 11.5px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      background: rgba(22, 185, 129, 0.15);
+      border: 1px solid #16B981;
+      color: #16B981;
+    }
+    .publisher-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .btn-pub-action {
       width: 100%;
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
-      color: #fff;
-      padding: 9px 12px;
+      color: var(--text-main);
+      padding: 9px 14px;
       border-radius: 8px;
       font-size: 13px;
-      font-weight: 600;
-      outline: none;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
     }
-    .status-select-control:focus { border-color: var(--primary-blue); }
+    .btn-pub-action:hover {
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      color: #fff;
+    }
+    .btn-pub-primary {
+      background: var(--primary-blue);
+      border-color: var(--primary-blue);
+      color: #fff;
+    }
+    .btn-pub-primary:hover {
+      background: #0b60b5;
+    }
+    .btn-pub-urgent {
+      background: rgba(255, 138, 48, 0.15);
+      border: 1px solid var(--orange-accent);
+      color: var(--orange-accent);
+    }
+    .btn-pub-urgent:hover {
+      background: var(--orange-accent);
+      color: #fff;
+    }
 
     /* Action Buttons */
     .action-buttons-group {
@@ -655,13 +699,13 @@
   <!-- Top Utility Bar -->
   <div class="top-utility-bar">
     <div class="utility-left">
-      <span class="badge-editorial">B2B Content Studio 2.0</span>
+      <span class="badge-editorial">Auto-Publisher Connected</span>
       <span>INDUS Industrial Robotics · Precision Motion Systems</span>
     </div>
     <div class="utility-right">
       <span>Timezone: Asia/Kolkata (IST)</span>
       <span>•</span>
-      <span>Quality Score: 95/100</span>
+      <span>Spreadsheet: INDUS_LINKEDIN_AUTO_PUBLISHER</span>
     </div>
   </div>
 
@@ -879,6 +923,38 @@
 
     <!-- RIGHT SIDEBAR: Information & Controls -->
     <aside class="right-sidebar">
+
+      <!-- Google Sheets Auto-Publisher Panel -->
+      <div class="sidebar-card">
+        <div class="card-sub-header">🚀 Auto-Publisher Actions</div>
+        <div class="publisher-status-pill" id="publisherStatusPill">
+          <span>●</span>
+          <span id="publisherStatusText">Google Sheets Connected</span>
+        </div>
+        
+        <div class="publisher-btn-group">
+          <button class="btn-pub-action btn-pub-primary" onclick="saveToGoogleSheets()">
+            <span>💾</span>
+            <span>Save to Google Sheets</span>
+          </button>
+          <button class="btn-pub-action" onclick="approveAndQueuePost()">
+            <span>✔️</span>
+            <span>Approve for Publishing</span>
+          </button>
+          <button class="btn-pub-action" onclick="schedulePostDialog()">
+            <span>⏰</span>
+            <span>Schedule Publication</span>
+          </button>
+          <button class="btn-pub-action btn-pub-urgent" onclick="publishNowDirect()">
+            <span>🚀</span>
+            <span>Publish Now to LinkedIn</span>
+          </button>
+          <a href="https://docs.google.com/spreadsheets/d/1S-ApP83X9Y1-nXwim0tDNGn72wuhVn4PSbaWkcXlH48/edit?usp=sharing" target="_blank" class="btn-pub-action" style="text-decoration:none;">
+            <span>📊</span>
+            <span>Open Google Sheet ↗</span>
+          </a>
+        </div>
+      </div>
       
       <!-- Post Information -->
       <div class="sidebar-card">
@@ -945,33 +1021,9 @@
         </table>
       </div>
 
-      <!-- Technical Verification Card -->
-      <div class="sidebar-card">
-        <div class="card-sub-header">🛡️ Technical Credibility</div>
-        <div style="margin-bottom: 10px;">
-          <span class="badge-verif">● Verified</span>
-        </div>
-        <p style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.5;">
-          Verified B2B partnership programs, lead times, and open-source GitHub repositories.
-        </p>
-      </div>
-
-      <!-- Editorial Workflow Management -->
-      <div class="sidebar-card">
-        <div class="card-sub-header">📝 Editorial Workflow</div>
-        <label style="font-size: 12px; color: var(--text-secondary); display: block; margin-bottom: 6px;">Publication Status:</label>
-        <select class="status-select-control" id="editorialStatusSelect" onchange="updatePostStatus(this.value)">
-          <option value="Approved" selected>Approved for Publishing</option>
-          <option value="Needs Technical Review" >Needs Technical Review</option>
-          <option value="Needs Content Review" >Needs Content Review</option>
-          <option value="Scheduled" >Scheduled</option>
-          <option value="Published" >Published</option>
-        </select>
-      </div>
-
       <!-- Quick Actions -->
       <div class="sidebar-card">
-        <div class="card-sub-header">⚡ Studio Actions</div>
+        <div class="card-sub-header">⚡ Studio Clipboard</div>
         <div class="action-buttons-group">
           <button class="btn-action-primary" onclick="copyCaption()">
             <span>📋</span>
@@ -1033,6 +1085,8 @@ Apply to join the INDUS Partner Network or schedule an OEM discovery call.
   <textarea id="rawHashtagsData" style="display:none;">#OEMPartnership #SystemIntegrator #MachineBuilder #RoboticsEcosystem</textarea>
 
   <script>
+    const currentPost = {"id": "INDUS-LI-087", "category": "Partnerships & OEM Opportunities", "title": "Strategic OEM Component Supply: Scalable Manufacturing of Precision Reducers & Servos", "caption": "Building high-precision CNC equipment or medical robotics requires a component supply partner with uncompromised quality.\n\nSingle-source supply chain bottlenecks and inconsistent gear tooth batches disrupt serial machine production.\n\nINDUS partners with OEMs to supply private-label and customized motion components with guaranteed blanket-order buffer stock. High-precision CNC manufacturing facilities maintain ISO 9001:2015 quality control and serialized batch traceability.\n\nOEMs secure a dependable, high-volume motion hardware supply with stable pricing and zero line starvation.\n\nKey Technical Specifications:\n\u2022 Manufacturing Capacity: High-volume precision reducer production facilities\n\u2022 Supply Assurance: Contractual 90-day blanket buffer stock options\n\u2022 Quality Standards: ISO 9001:2015 certified quality management\n\u2022 Traceability: Serialized inspection reports and material certificates\n\u2022 Customization: Custom shafting, flanges, and winding configurations\n\nApply to join the INDUS Partner Network or schedule an OEM discovery call.\n\n#OEMPartnership #SystemIntegrator #MachineBuilder #RoboticsEcosystem", "cta": "Apply to join the INDUS Partner Network or schedule an OEM discovery call.", "hashtags": ["#OEMPartnership", "#SystemIntegrator", "#MachineBuilder", "#RoboticsEcosystem"], "imageUrl": "https://indus-linkedin-content-studio.vercel.app/assets/visuals/visual-087.svg", "previewUrl": "https://indus-linkedin-content-studio.vercel.app/assets/visuals/visual-087.svg", "mediaType": "IMAGE", "scheduledDate": "", "scheduledTime": "11:30", "approvalStatus": "PENDING", "publishingStatus": "DRAFT"};
+
     // Desktop vs Mobile preview switcher
     function setPreviewMode(mode) {
       const card = document.getElementById('linkedinFeedCard');
@@ -1061,11 +1115,12 @@ Apply to join the INDUS Partner Network or schedule an OEM discovery call.
     }
 
     // Clipboard copy
-    function showToast(msg) {
+    function showToast(msg, isSuccess = true) {
       const t = document.getElementById('toast');
       t.textContent = msg;
+      t.style.background = isSuccess ? '#10B981' : '#EF4444';
       t.classList.add('show');
-      setTimeout(() => { t.classList.remove('show'); }, 2500);
+      setTimeout(() => { t.classList.remove('show'); }, 3000);
     }
 
     function copyCaption() {
@@ -1073,7 +1128,7 @@ Apply to join the INDUS Partner Network or schedule an OEM discovery call.
       navigator.clipboard.writeText(txt).then(() => {
         showToast('✓ Full LinkedIn Caption copied!');
       }).catch(() => {
-        showToast('Failed to copy caption');
+        showToast('Failed to copy caption', false);
       });
     }
 
@@ -1082,22 +1137,120 @@ Apply to join the INDUS Partner Network or schedule an OEM discovery call.
       navigator.clipboard.writeText(txt).then(() => {
         showToast('✓ Hashtags copied to clipboard!');
       }).catch(() => {
-        showToast('Failed to copy hashtags');
+        showToast('Failed to copy hashtags', false);
       });
     }
 
-    function updatePostStatus(val) {
-      localStorage.setItem('INDUS-LI-087_status', val);
-      showToast('Status updated to ' + val);
+    // ========================================================================
+    // AUTO-PUBLISHER ACTIONS: SAVE, APPROVE, SCHEDULE, PUBLISH NOW
+    // ========================================================================
+
+    async function saveToGoogleSheets() {
+      showToast('⏳ Saving to Google Sheets (CONTENT_QUEUE)...');
+      try {
+        const resp = await fetch('/api/publisher', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'save_post',
+            post: currentPost
+          })
+        });
+        const res = await resp.json();
+        if (res.success) {
+          showToast(`✓ Post ${currentPost.id} saved to Google Sheets!`);
+          document.getElementById('publisherStatusText').textContent = 'Saved in CONTENT_QUEUE';
+          localStorage.setItem(`${currentPost.id}_sheets_synced`, 'true');
+        } else {
+          showToast(`Error: ${res.error}`, false);
+        }
+      } catch (err) {
+        showToast(`Sync error: ${err.message}`, false);
+      }
     }
 
-    // Restore status if modified
-    document.addEventListener('DOMContentLoaded', () => {
-      const saved = localStorage.getItem('INDUS-LI-087_status');
-      if (saved) {
-        document.getElementById('editorialStatusSelect').value = saved;
+    async function approveAndQueuePost() {
+      showToast('⏳ Approving post in Google Sheets...');
+      try {
+        const resp = await fetch('/api/publisher', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'approve_post',
+            postId: currentPost.id
+          })
+        });
+        const res = await resp.json();
+        if (res.success) {
+          showToast(`✓ Post ${currentPost.id} APPROVED & QUEUED for publishing!`);
+          document.getElementById('publisherStatusText').textContent = 'APPROVED (Queued)';
+        } else {
+          showToast(`Error: ${res.error}`, false);
+        }
+      } catch (err) {
+        showToast(`Approval error: ${err.message}`, false);
       }
-    });
+    }
+
+    async function schedulePostDialog() {
+      const today = new Date().toISOString().split('T')[0];
+      const schedDate = prompt('Enter Scheduled Date (YYYY-MM-DD):', today);
+      if (!schedDate) return;
+      const schedTime = prompt('Enter Scheduled Time in Asia/Kolkata IST (HH:MM):', '11:30');
+      if (!schedTime) return;
+
+      showToast('⏳ Updating schedule in Google Sheets...');
+      try {
+        const resp = await fetch('/api/publisher', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'schedule_post',
+            postId: currentPost.id,
+            scheduledDate: schedDate,
+            scheduledTime: schedTime
+          })
+        });
+        const res = await resp.json();
+        if (res.success) {
+          showToast(`✓ Scheduled for ${schedDate} ${schedTime} IST!`);
+          document.getElementById('publisherStatusText').textContent = `Scheduled: ${schedDate} ${schedTime} IST`;
+        } else {
+          showToast(`Error: ${res.error}`, false);
+        }
+      } catch (err) {
+        showToast(`Scheduling error: ${err.message}`, false);
+      }
+    }
+
+    async function publishNowDirect() {
+      const confirmPub = confirm(`Are you sure you want to trigger live publication for ${currentPost.id} now to the INDUS LinkedIn Company Page?`);
+      if (!confirmPub) return;
+
+      showToast('🚀 Dispatching to LinkedIn Posts API...');
+      try {
+        const resp = await fetch('/api/publisher', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'publish_now',
+            postId: currentPost.id
+          })
+        });
+        const res = await resp.json();
+        if (res.success) {
+          showToast(`🚀 Published! URN: ${res.postUrn || 'urn:li:share:published'}`);
+          document.getElementById('publisherStatusText').textContent = 'PUBLISHED';
+          if (res.postUrl) {
+            window.open(res.postUrl, '_blank');
+          }
+        } else {
+          showToast(`Publishing failed: ${res.error}`, false);
+        }
+      } catch (err) {
+        showToast(`Error: ${err.message}`, false);
+      }
+    }
   </script>
 
 </body>

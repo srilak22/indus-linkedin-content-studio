@@ -1,0 +1,10 @@
+{
+  "name": "indus-linkedin-content-studio",
+  "version": "2.0.0",
+  "description": "INDUS Industrial Robotics - LinkedIn Content Studio with Google Sheets Auto-Publishing",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {}
+}
