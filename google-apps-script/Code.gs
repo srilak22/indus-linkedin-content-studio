@@ -816,6 +816,9 @@ function uploadLinkedInImage(imageUrl, orgUrn, accessToken) {
 function getLinkedInAccessToken() {
   var props = PropertiesService.getScriptProperties();
   var token = props.getProperty('LINKEDIN_ACCESS_TOKEN');
+  if (!token || token.trim() === '') {
+    token = getSettingValue('LINKEDIN_ACCESS_TOKEN', '');
+  }
   var expiry = props.getProperty('LINKEDIN_TOKEN_EXPIRY');
 
   // If token is fresh (with 10-minute buffer), return it
