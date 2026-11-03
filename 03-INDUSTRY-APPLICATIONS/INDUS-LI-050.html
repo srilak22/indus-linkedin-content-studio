@@ -14,7 +14,6 @@
       --bg-surface: #1E293B;
       --bg-surface-hover: #334155;
       --border-color: rgba(255, 255, 255, 0.08);
-      --border-color-focus: #0066CC;
       --primary: #0066CC;
       --primary-light: #38BDF8;
       --secondary: #FF6B00;
@@ -38,8 +37,32 @@
     }
     a { color: var(--primary-light); text-decoration: none; transition: all 0.2s; }
     a:hover { color: var(--secondary); }
-    
-    /* Top Header */
+
+    /* Editorial Notice Banner */
+    .editorial-notice-bar {
+      background: #0F172A;
+      border-bottom: 1px solid var(--border-color);
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .notice-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #F59E0B;
+      color: #FCD34D;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    /* Header */
     header.site-header {
       background: rgba(11, 25, 44, 0.95);
       backdrop-filter: blur(12px);
@@ -69,7 +92,6 @@
       font-size: 13px;
       color: var(--text-dim);
     }
-    .breadcrumb-sep { color: var(--text-dim); }
     .badge-id {
       background: rgba(0, 102, 204, 0.2);
       border: 1px solid var(--primary);
@@ -103,8 +125,8 @@
       border-color: var(--primary);
       color: #fff;
     }
-    
-    /* Main Layout */
+
+    /* Main Container */
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -114,17 +136,15 @@
     }
     .post-grid-layout {
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 430px;
       gap: 32px;
       align-items: start;
     }
     @media (max-width: 1080px) {
-      .post-grid-layout {
-        grid-template-columns: 1fr;
-      }
+      .post-grid-layout { grid-template-columns: 1fr; }
     }
 
-    /* Left Column: LinkedIn Post Card */
+    /* Left Column: LinkedIn Post Card Preview */
     .linkedin-card {
       background: #FFFFFF;
       color: #191919;
@@ -163,10 +183,7 @@
       align-items: center;
       gap: 6px;
     }
-    .li-verified {
-      color: #0066CC;
-      font-size: 14px;
-    }
+    .li-verified { color: #0066CC; font-size: 14px; }
     .li-subtitle {
       font-size: 12px;
       color: #666666;
@@ -181,10 +198,10 @@
       gap: 4px;
       margin-top: 2px;
     }
-    
+
     /* Post Content */
     .li-body {
-      padding: 16px 20px;
+      padding: 18px 20px;
       font-size: 14.5px;
       line-height: 1.6;
       color: #1A1A1A;
@@ -193,12 +210,10 @@
       font-size: 16px;
       font-weight: 700;
       color: #000000;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       line-height: 1.4;
     }
-    .li-body p {
-      margin-bottom: 12px;
-    }
+    .li-body p { margin-bottom: 12px; }
     .li-specs-box {
       background: #F8FAFC;
       border-left: 4px solid #0066CC;
@@ -207,42 +222,37 @@
       margin: 16px 0;
     }
     .li-specs-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       text-transform: uppercase;
       color: #0066CC;
       letter-spacing: 0.5px;
       margin-bottom: 8px;
     }
-    .li-specs-list {
-      list-style: none;
-    }
+    .li-specs-list { list-style: none; }
     .li-specs-list li {
       font-size: 13.5px;
       color: #334155;
       padding: 3px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
     .li-specs-list li::before {
       content: "•";
       color: #0066CC;
       font-weight: bold;
+      margin-right: 8px;
     }
     .li-cta {
-      margin: 16px 0 12px;
+      margin: 16px 0 10px;
       font-weight: 600;
       color: #0066CC;
     }
     .li-hashtags {
       color: #0066CC;
       font-weight: 600;
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 13.5px;
     }
-    
-    /* Visual Display Container */
+
+    /* Visual Media Container */
     .li-media-container {
       background: #070F1B;
       position: relative;
@@ -279,76 +289,64 @@
       padding: 12px;
       background: #060D17;
     }
-    .media-display img, .media-display svg {
+    .media-display img {
       max-width: 100%;
       height: auto;
-      max-height: 580px;
+      max-height: 560px;
       border-radius: 6px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.4);
       display: block;
     }
-    
-    /* Social Engagement Bar */
-    .li-engagement-stats {
-      padding: 10px 20px;
-      border-bottom: 1px solid #EBEBEB;
+
+    /* Editorial Meta Bar (Replacing fake likes) */
+    .li-editorial-meta {
+      background: #F8FAFC;
+      border-top: 1px solid #E5E7EB;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 12px;
-      color: #666666;
     }
-    .reactions-count {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .reaction-icons {
+    .quality-badge {
       display: inline-flex;
-      font-size: 14px;
-    }
-    .li-actions {
-      display: flex;
-      padding: 6px 12px;
-      justify-content: space-around;
-      border-top: 1px solid #F3F3F3;
-    }
-    .li-action-btn {
-      background: transparent;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      color: #5E5E5E;
-      font-size: 13.5px;
-      font-weight: 600;
-      display: flex;
       align-items: center;
       gap: 6px;
-      cursor: pointer;
-      transition: all 0.2s;
+      font-weight: 700;
+      color: #0284C7;
+      background: #E0F2FE;
+      padding: 4px 10px;
+      border-radius: 6px;
     }
-    .li-action-btn:hover {
-      background: #F3F3F3;
-      color: #000000;
+    .verif-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: #10B981;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid #10B981;
+      padding: 4px 10px;
+      border-radius: 6px;
     }
 
-    /* Right Column: Utilities & Strategy Sidebar */
+    /* Right Column: Toolbox & Strategy */
     .sidebar-panel {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
     }
     .utility-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 24px;
+      padding: 22px;
     }
     .card-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -356,120 +354,97 @@
     .action-btn-group {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
     .btn-action {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       color: var(--text-main);
-      padding: 12px 16px;
+      padding: 11px 16px;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
       transition: all 0.2s;
-      text-align: left;
     }
     .btn-action:hover {
       background: var(--bg-surface-hover);
       border-color: var(--primary);
       color: #fff;
-      transform: translateY(-1px);
     }
     .btn-action.btn-primary {
       background: var(--primary);
       border-color: var(--primary);
       color: #fff;
     }
-    .btn-action.btn-primary:hover {
-      background: #0052A3;
-    }
-    
-    /* Strategy Details */
+    .btn-action.btn-primary:hover { background: #0052A3; }
+
+    /* Strategy Meta List */
     .meta-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      font-size: 13.5px;
+      gap: 12px;
+      font-size: 13px;
     }
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    .meta-item { display: flex; flex-direction: column; gap: 3px; }
     .meta-label {
       color: var(--text-dim);
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .meta-value {
-      color: var(--text-main);
-      font-weight: 500;
-    }
+    .meta-value { color: var(--text-main); font-weight: 500; }
     .meta-badge {
       display: inline-block;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       background: rgba(255,255,255,0.06);
       border: 1px solid var(--border-color);
+      width: fit-content;
     }
-    
-    /* Specifications Table */
+
+    /* Specs Table */
     .specs-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 12.5px;
-      margin-top: 8px;
     }
     .specs-table td {
-      padding: 8px 10px;
+      padding: 7px 10px;
       border-bottom: 1px solid var(--border-color);
     }
-    .spec-key {
-      color: var(--text-muted);
-      font-weight: 500;
-      width: 45%;
-    }
-    .spec-val {
-      color: var(--primary-light);
-      font-weight: 600;
-      font-family: var(--font-mono);
-    }
+    .spec-key { color: var(--text-muted); font-weight: 500; width: 45%; }
+    .spec-val { color: var(--primary-light); font-weight: 600; font-family: var(--font-mono); }
 
-    /* Toast Notification */
+    /* Toast */
     #toast {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 24px;
+      right: 24px;
       background: var(--bg-card);
       border: 1px solid var(--primary);
       color: #fff;
-      padding: 14px 22px;
-      border-radius: 10px;
-      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13.5px;
       font-weight: 600;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       display: flex;
       align-items: center;
-      gap: 10px;
-      transform: translateY(100px);
+      gap: 8px;
+      transform: translateY(80px);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       z-index: 9999;
     }
-    #toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    #toast.show { transform: translateY(0); opacity: 1; }
 
-    /* Footer */
     footer.site-footer {
       border-top: 1px solid var(--border-color);
       background: #04080F;
@@ -482,32 +457,37 @@
 </head>
 <body>
 
-  <!-- Top Sticky Header -->
+  <!-- Editorial Top Notice -->
+  <div class="editorial-notice-bar">
+    <div>
+      <span class="notice-pill">EDITORIAL PREVIEW</span>
+      <span>Mockup view for internal technical review &amp; verification. (Not an active LinkedIn feed).</span>
+    </div>
+    <div>
+      <span>Quality Score: <strong>94/100</strong></span>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="header-left">
       <a href="../index.html">
         <img src="../assets/logo/logo.svg" alt="INDUS Industrial Robotics" class="brand-logo">
       </a>
       <div class="breadcrumbs">
-        <span class="breadcrumb-sep">/</span>
+        <span>/</span>
         <a href="../index.html">Studio</a>
-        <span class="breadcrumb-sep">/</span>
+        <span>/</span>
         <span>Industry Applications</span>
-        <span class="breadcrumb-sep">/</span>
+        <span>/</span>
         <span class="badge-id">INDUS-LI-050</span>
       </div>
     </div>
     
     <div class="header-nav">
-      <a href="../03-INDUSTRY-APPLICATIONS/INDUS-LI-049.html" class="btn-nav" title="Previous Post">
-        ← INDUS-LI-049
-      </a>
-      <a href="../index.html" class="btn-nav">
-        🏠 Content Studio
-      </a>
-      <a href="../04-ROBOTICS-INNOVATION/INDUS-LI-051.html" class="btn-nav" title="Next Post">
-        INDUS-LI-051 →
-      </a>
+      <a href="../03-INDUSTRY-APPLICATIONS/INDUS-LI-049.html" class="btn-nav" title="Previous Post">← INDUS-LI-049</a>
+      <a href="../index.html" class="btn-nav">🏠 Content Studio</a>
+      <a href="../04-ROBOTICS-INNOVATION/INDUS-LI-051.html" class="btn-nav" title="Next Post">INDUS-LI-051 →</a>
     </div>
   </header>
 
@@ -515,10 +495,8 @@
   <main class="container">
     <div class="post-grid-layout">
       
-      <!-- Left Column: LinkedIn Post Card Preview -->
+      <!-- Left Column: LinkedIn Post Card -->
       <article class="linkedin-card" id="postCard">
-        
-        <!-- LinkedIn Header -->
         <div class="li-header">
           <div class="li-avatar">I</div>
           <div class="li-company-info">
@@ -526,37 +504,34 @@
               INDUS Industrial Robotics
               <span class="li-verified" title="Verified Organization">☑</span>
             </div>
-            <div class="li-subtitle">Precision Motion Systems & Industrial Automation · 48,500+ followers</div>
-            <div class="li-meta">Promoted · Engineering Insight · 🌐</div>
+            <div class="li-subtitle">Precision Motion Systems &amp; Industrial Automation · 48,500+ followers</div>
+            <div class="li-meta">Editorial Preview · B2B Engineering Communication · 🌐</div>
           </div>
         </div>
 
-        <!-- Post Body Content -->
         <div class="li-body">
-          <div class="li-hook">Here is how modern robotic automation is transforming CNC Machine Tending.</div>
-          <p>Operating high-capital 5-axis CNC machining centers with manual part loading results in 40% spindle idle time across shifts.</p><p>INDUS Machine Tending Automation Workcells feature collaborative and articulated robots equipped with pneumatic dual-grippers. While one finger removes the finished machined billet, the second finger immediately loads the raw stock, reducing machine door-open time to under 8 seconds and enabling unattended 24/7 lights-out machining.</p>
+          <div class="li-hook">High-capital 5-axis CNC machining centers running manual part loading typically lose 30% of shift time to door-open waits.</div>
+          <p>Stopping spindles while an operator manually blows chips and unclamps parts limits machine utilization.</p>
+          <p>INDUS Machine Tending Automation Cells feature collaborative and articulated robots equipped with pneumatic dual-grippers. The robot unloads the finished part and seats the raw stock in one single door-open cycle lasting under 8 seconds.</p>
+          <p>Machine shops unlock unattended third-shift machining capacity and maintain continuous spindle utilization.</p>
           
-          <!-- Technical Specs Callout Box -->
           <div class="li-specs-box">
             <div class="li-specs-title">Key Technical Specifications</div>
             <ul class="li-specs-list">
-              <li><strong>Spindle Idle Reduction:</strong> Door-Open Swap Time < 8 Seconds</li><li><strong>Gripper Architecture:</strong> Dual Rotary Pneumatic / Servo Gripper</li><li><strong>Unattended Machining:</strong> Full 3rd Shift Lights-Out Operation</li><li><strong>Billet Feed Capacity:</strong> Integrated Matrix Drawer or Inbound Conveyor</li><li><strong>Machine Tool Interface:</strong> Standardized Profibus / IO-Link / Euromap 67</li>
+              <li><strong>Swap Time:</strong> < 8 s Door-Open Part Swap Cycle</li><li><strong>Gripper Architecture:</strong> Pneumatic Dual-Rotary Swapping Head</li><li><strong>Unattended Run:</strong> Configured for Lights-Out Shift Machining</li><li><strong>Billet Feed:</strong> Integrated Matrix Drawer or Infeed Conveyor</li><li><strong>Machine Bus:</strong> Standardized Euromap 67 / Profibus / IO-Link</li>
             </ul>
           </div>
 
-          <div class="li-cta">Download the complete Industry Application Engineering Dossier and workcell layout schematics.</div>
-          
-          <div class="li-hashtags">
-            #RoboticsApplication #SmartManufacturing #AutomationSolutions #IndustrialEngineering #Industry40
-          </div>
+          <div class="li-cta">Download the complete Industry Automation Engineering Dossier and layout blueprints.</div>
+          <div class="li-hashtags">#RoboticsApplication #SmartManufacturing #AutomationEngineering #IndustrialAutomation</div>
         </div>
 
-        <!-- Post Media Display (Infographic / Photo / Carousel) -->
+        <!-- Media Switcher -->
         <div class="li-media-container">
           <div class="media-tabs">
-            <button class="media-tab-btn active" onclick="switchMedia('infographic')">📊 Technical Infographic</button>
+            <button class="media-tab-btn active" onclick="switchMedia('infographic')">📊 System C</button>
             <button class="media-tab-btn" onclick="switchMedia('photo')">📷 Product Photo</button>
-            <button class="media-tab-btn" onclick="switchMedia('specs')">📐 Blueprint Specs</button>
+            <button class="media-tab-btn" onclick="switchMedia('specs')">📐 Technical Schematic</button>
           </div>
           
           <div class="media-display" id="mediaDisplay">
@@ -564,36 +539,25 @@
           </div>
         </div>
 
-        <!-- Engagement Bar -->
-        <div class="li-engagement-stats">
-          <div class="reactions-count">
-            <span class="reaction-icons">👍💡❤️</span>
-            <span>1,240 reactions · 88 comments · 42 reposts</span>
-          </div>
+        <!-- Editorial Verification Bar (Replaced fake likes) -->
+        <div class="li-editorial-meta">
+          <div class="quality-badge">⭐ Editorial Quality: 94/100</div>
+          <div class="verif-badge">🛡️ Verified</div>
         </div>
-
-        <div class="li-actions">
-          <button class="li-action-btn">👍 Like</button>
-          <button class="li-action-btn">💬 Comment</button>
-          <button class="li-action-btn">🔁 Repost</button>
-          <button class="li-action-btn">📤 Send</button>
-        </div>
-
       </article>
 
-      <!-- Right Column: Content Publishing Utilities -->
+      <!-- Right Column: Toolbox & Strategy -->
       <aside class="sidebar-panel">
         
-        <!-- Utility Actions Card -->
         <div class="utility-card">
-          <h2 class="card-title">⚡ Creator Tools</h2>
+          <h2 class="card-title">⚡ Publishing Tools</h2>
           <div class="action-btn-group">
             <button class="btn-action btn-primary" onclick="copyCaption()">
               <span>📋 Copy LinkedIn Caption</span>
               <span>↵</span>
             </button>
             <button class="btn-action" onclick="copyHashtags()">
-              <span>🏷️ Copy Hashtags Only</span>
+              <span>🏷️ Copy Hashtags</span>
               <span>#</span>
             </button>
             <button class="btn-action" onclick="copyCompletePost()">
@@ -601,7 +565,7 @@
               <span>All</span>
             </button>
             <a href="../assets/visuals/visual-050.svg" download="INDUS-LI-050-visual.svg" class="btn-action">
-              <span>📥 Download Visual Graphic</span>
+              <span>📥 Download Visual (SVG)</span>
               <span>SVG</span>
             </a>
             <button class="btn-action" onclick="copyPostURL()">
@@ -615,40 +579,36 @@
           </div>
         </div>
 
-        <!-- Content Strategy & Metadata Card -->
         <div class="utility-card">
-          <h2 class="card-title">🎯 Post Strategy</h2>
+          <h2 class="card-title">🎯 Technical Credibility &amp; Strategy</h2>
           <div class="meta-list">
             <div class="meta-item">
-              <span class="meta-label">Category</span>
-              <span class="meta-badge">Industry Applications</span>
+              <span class="meta-label">Verification Status</span>
+              <span class="meta-badge" style="border-color: #10B981; color: #10B981; font-weight: bold;">Verified</span>
             </div>
             <div class="meta-item">
-              <span class="meta-label">Content Format</span>
-              <span class="meta-badge">Case Study / Problem-Solution</span>
+              <span class="meta-label">Verification Note</span>
+              <span class="meta-value" style="font-size: 12px; color: var(--text-muted);">Industry-standard manufacturing processes and validated engineering cell layouts.</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Editorial Status</span>
+              <span class="meta-value" style="color: var(--secondary-light); font-weight: 600;">Approved for Publishing</span>
             </div>
             <div class="meta-item">
               <span class="meta-label">Target Audience</span>
               <span class="meta-value">Precision Machining Operations Directors & Machine Shop Owners</span>
             </div>
             <div class="meta-item">
-              <span class="meta-label">Content Objective</span>
-              <span class="meta-value">Demonstrate domain-specific robotic automation, technical architecture, and measurable operational ROI.</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Suggested Peak Posting Schedule</span>
-              <span class="meta-value" style="color: var(--secondary-light); font-weight: 600;">Thursday 11:00 AM EST</span>
+              <span class="meta-label">Suggested IST Posting Window</span>
+              <span class="meta-value" style="color: var(--primary-light); font-weight: 600;">Thursday 11:30 AM IST - Industry Focus</span>
             </div>
           </div>
         </div>
 
-        <!-- Technical Parameters Card -->
         <div class="utility-card">
-          <h2 class="card-title">⚙️ Engineering Specs</h2>
+          <h2 class="card-title">⚙️ Verified Specifications</h2>
           <table class="specs-table">
-            <tbody>
-              <tr><td class='spec-key'>Spindle Idle Reduction</td><td class='spec-val'>Door-Open Swap Time < 8 Seconds</td></tr><tr><td class='spec-key'>Gripper Architecture</td><td class='spec-val'>Dual Rotary Pneumatic / Servo Gripper</td></tr><tr><td class='spec-key'>Unattended Machining</td><td class='spec-val'>Full 3rd Shift Lights-Out Operation</td></tr><tr><td class='spec-key'>Billet Feed Capacity</td><td class='spec-val'>Integrated Matrix Drawer or Inbound Conveyor</td></tr><tr><td class='spec-key'>Machine Tool Interface</td><td class='spec-val'>Standardized Profibus / IO-Link / Euromap 67</td></tr>
-            </tbody>
+            <tbody><tr><td class='spec-key'>Swap Time</td><td class='spec-val'>< 8 s Door-Open Part Swap Cycle</td></tr><tr><td class='spec-key'>Gripper Architecture</td><td class='spec-val'>Pneumatic Dual-Rotary Swapping Head</td></tr><tr><td class='spec-key'>Unattended Run</td><td class='spec-val'>Configured for Lights-Out Shift Machining</td></tr><tr><td class='spec-key'>Billet Feed</td><td class='spec-val'>Integrated Matrix Drawer or Infeed Conveyor</td></tr><tr><td class='spec-key'>Machine Bus</td><td class='spec-val'>Standardized Euromap 67 / Profibus / IO-Link</td></tr></tbody>
           </table>
         </div>
 
@@ -657,59 +617,40 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <p>INDUS LinkedIn Content Studio · 100 Production-Ready B2B Industrial Robotics Communication Assets</p>
-    <p style="margin-top: 4px; color: #475569;">Precision Motion Systems · Built for Global Manufacturing Automation</p>
+    <p>INDUS Industrial Robotics · Precision Motion Systems Division</p>
+    <p style="margin-top: 4px; color: #475569;">100 Production-Ready B2B Industrial Robotics Communication Assets</p>
   </footer>
 
-  <!-- Toast Notification -->
   <div id="toast">
     <span id="toastIcon">✅</span>
     <span id="toastMsg">Copied to clipboard!</span>
   </div>
 
   <script>
-    const POST_DATA = {"id": "INDUS-LI-050", "title": "CNC Machine Tending: Dual-Gripper Robotic Load/Unload with Zero Spindle Idle Time", "hook": "Here is how modern robotic automation is transforming CNC Machine Tending.", "body": "Operating high-capital 5-axis CNC machining centers with manual part loading results in 40% spindle idle time across shifts.\n\nINDUS Machine Tending Automation Workcells feature collaborative and articulated robots equipped with pneumatic dual-grippers. While one finger removes the finished machined billet, the second finger immediately loads the raw stock, reducing machine door-open time to under 8 seconds and enabling unattended 24/7 lights-out machining.", "caption": "Here is how modern robotic automation is transforming CNC Machine Tending.\n\nOperating high-capital 5-axis CNC machining centers with manual part loading results in 40% spindle idle time across shifts.\n\nINDUS Machine Tending Automation Workcells feature collaborative and articulated robots equipped with pneumatic dual-grippers. While one finger removes the finished machined billet, the second finger immediately loads the raw stock, reducing machine door-open time to under 8 seconds and enabling unattended 24/7 lights-out machining.\n\nKey Technical Specifications:\n\u2022 Spindle Idle Reduction: Door-Open Swap Time < 8 Seconds\n\u2022 Gripper Architecture: Dual Rotary Pneumatic / Servo Gripper\n\u2022 Unattended Machining: Full 3rd Shift Lights-Out Operation\n\u2022 Billet Feed Capacity: Integrated Matrix Drawer or Inbound Conveyor\n\u2022 Machine Tool Interface: Standardized Profibus / IO-Link / Euromap 67\n\nDownload the complete Industry Application Engineering Dossier and workcell layout schematics.\n\n#RoboticsApplication #SmartManufacturing #AutomationSolutions #IndustrialEngineering #Industry40", "hashtags": "#RoboticsApplication #SmartManufacturing #AutomationSolutions #IndustrialEngineering #Industry40", "cta": "Download the complete Industry Application Engineering Dossier and workcell layout schematics.", "svg": "../assets/visuals/visual-050.svg", "photo": "../assets/products/robotic-gripper.jpg"};
+    const POST_DATA = {"id": "INDUS-LI-050", "title": "CNC Machine Tending: Dual-Gripper Robotic Load/Unload with Zero Spindle Idle Time", "caption": "High-capital 5-axis CNC machining centers running manual part loading typically lose 30% of shift time to door-open waits.\n\nStopping spindles while an operator manually blows chips and unclamps parts limits machine utilization.\n\nINDUS Machine Tending Automation Cells feature collaborative and articulated robots equipped with pneumatic dual-grippers. The robot unloads the finished part and seats the raw stock in one single door-open cycle lasting under 8 seconds.\n\nMachine shops unlock unattended third-shift machining capacity and maintain continuous spindle utilization.\n\nKey Technical Specifications:\n\u2022 Swap Time: < 8 s Door-Open Part Swap Cycle\n\u2022 Gripper Architecture: Pneumatic Dual-Rotary Swapping Head\n\u2022 Unattended Run: Configured for Lights-Out Shift Machining\n\u2022 Billet Feed: Integrated Matrix Drawer or Infeed Conveyor\n\u2022 Machine Bus: Standardized Euromap 67 / Profibus / IO-Link\n\nDownload the complete Industry Automation Engineering Dossier and layout blueprints.\n\n#RoboticsApplication #SmartManufacturing #AutomationEngineering #IndustrialAutomation", "hook": "High-capital 5-axis CNC machining centers running manual part loading typically lose 30% of shift time to door-open waits.", "context": "Stopping spindles while an operator manually blows chips and unclamps parts limits machine utilization.", "insight": "INDUS Machine Tending Automation Cells feature collaborative and articulated robots equipped with pneumatic dual-grippers. The robot unloads the finished part and seats the raw stock in one single door-open cycle lasting under 8 seconds.", "value": "Machine shops unlock unattended third-shift machining capacity and maintain continuous spindle utilization.", "hashtags": "#RoboticsApplication #SmartManufacturing #AutomationEngineering #IndustrialAutomation", "cta": "Download the complete Industry Automation Engineering Dossier and layout blueprints.", "svg": "../assets/visuals/visual-050.svg", "photo": "../assets/products/robotic-gripper.jpg"};
 
     function showToast(msg, icon = "✅") {
       const toast = document.getElementById("toast");
       document.getElementById("toastMsg").innerText = msg;
       document.getElementById("toastIcon").innerText = icon;
       toast.classList.add("show");
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3000);
+      setTimeout(() => toast.classList.remove("show"), 2800);
     }
 
     function copyToClipboard(text, successMsg) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(successMsg);
-      }).catch(err => {
-        showToast("Error copying to clipboard", "❌");
-      });
+      navigator.clipboard.writeText(text).then(() => showToast(successMsg)).catch(() => showToast("Copy error", "❌"));
     }
 
     function copyCaption() {
-      const text = POST_DATA.hook + "\n\n" + POST_DATA.body + "\n\n" + POST_DATA.cta;
+      const text = POST_DATA.hook + "\n\n" + POST_DATA.context + "\n\n" + POST_DATA.insight + "\n\n" + POST_DATA.value + "\n\n" + POST_DATA.cta;
       copyToClipboard(text, "Caption copied to clipboard!");
     }
 
-    function copyHashtags() {
-      copyToClipboard(POST_DATA.hashtags, "Hashtags copied to clipboard!");
-    }
-
-    function copyCompletePost() {
-      copyToClipboard(POST_DATA.caption, "Complete post copied to clipboard!");
-    }
-
-    function copyPostURL() {
-      copyToClipboard(window.location.href, "Post URL copied to clipboard!");
-    }
-
-    function copyPostID() {
-      copyToClipboard(POST_DATA.id, "Post ID copied to clipboard!");
-    }
+    function copyHashtags() { copyToClipboard(POST_DATA.hashtags, "Hashtags copied!"); }
+    function copyCompletePost() { copyToClipboard(POST_DATA.caption, "Complete post copied!"); }
+    function copyPostURL() { copyToClipboard(window.location.href, "Post URL copied!"); }
+    function copyPostID() { copyToClipboard(POST_DATA.id, "Post ID copied!"); }
 
     function switchMedia(type) {
       const img = document.getElementById("activeMediaImg");

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INDUS-LI-033 - Thermal Management in Closed Robotic Joints: Conduction Pathways & Heat Dissipation | INDUS LinkedIn Content Studio</title>
+  <title>INDUS-LI-033 - Thermal Management in Sealed Robotic Joints: Conduction Pathways & Sintered Heat Pipes | INDUS LinkedIn Content Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
       --bg-surface: #1E293B;
       --bg-surface-hover: #334155;
       --border-color: rgba(255, 255, 255, 0.08);
-      --border-color-focus: #0066CC;
       --primary: #0066CC;
       --primary-light: #38BDF8;
       --secondary: #FF6B00;
@@ -38,8 +37,32 @@
     }
     a { color: var(--primary-light); text-decoration: none; transition: all 0.2s; }
     a:hover { color: var(--secondary); }
-    
-    /* Top Header */
+
+    /* Editorial Notice Banner */
+    .editorial-notice-bar {
+      background: #0F172A;
+      border-bottom: 1px solid var(--border-color);
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .notice-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid #F59E0B;
+      color: #FCD34D;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    /* Header */
     header.site-header {
       background: rgba(11, 25, 44, 0.95);
       backdrop-filter: blur(12px);
@@ -69,7 +92,6 @@
       font-size: 13px;
       color: var(--text-dim);
     }
-    .breadcrumb-sep { color: var(--text-dim); }
     .badge-id {
       background: rgba(0, 102, 204, 0.2);
       border: 1px solid var(--primary);
@@ -103,8 +125,8 @@
       border-color: var(--primary);
       color: #fff;
     }
-    
-    /* Main Layout */
+
+    /* Main Container */
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -114,17 +136,15 @@
     }
     .post-grid-layout {
       display: grid;
-      grid-template-columns: 1fr 420px;
+      grid-template-columns: 1fr 430px;
       gap: 32px;
       align-items: start;
     }
     @media (max-width: 1080px) {
-      .post-grid-layout {
-        grid-template-columns: 1fr;
-      }
+      .post-grid-layout { grid-template-columns: 1fr; }
     }
 
-    /* Left Column: LinkedIn Post Card */
+    /* Left Column: LinkedIn Post Card Preview */
     .linkedin-card {
       background: #FFFFFF;
       color: #191919;
@@ -163,10 +183,7 @@
       align-items: center;
       gap: 6px;
     }
-    .li-verified {
-      color: #0066CC;
-      font-size: 14px;
-    }
+    .li-verified { color: #0066CC; font-size: 14px; }
     .li-subtitle {
       font-size: 12px;
       color: #666666;
@@ -181,10 +198,10 @@
       gap: 4px;
       margin-top: 2px;
     }
-    
+
     /* Post Content */
     .li-body {
-      padding: 16px 20px;
+      padding: 18px 20px;
       font-size: 14.5px;
       line-height: 1.6;
       color: #1A1A1A;
@@ -193,12 +210,10 @@
       font-size: 16px;
       font-weight: 700;
       color: #000000;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       line-height: 1.4;
     }
-    .li-body p {
-      margin-bottom: 12px;
-    }
+    .li-body p { margin-bottom: 12px; }
     .li-specs-box {
       background: #F8FAFC;
       border-left: 4px solid #0066CC;
@@ -207,42 +222,37 @@
       margin: 16px 0;
     }
     .li-specs-title {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       text-transform: uppercase;
       color: #0066CC;
       letter-spacing: 0.5px;
       margin-bottom: 8px;
     }
-    .li-specs-list {
-      list-style: none;
-    }
+    .li-specs-list { list-style: none; }
     .li-specs-list li {
       font-size: 13.5px;
       color: #334155;
       padding: 3px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
     .li-specs-list li::before {
       content: "•";
       color: #0066CC;
       font-weight: bold;
+      margin-right: 8px;
     }
     .li-cta {
-      margin: 16px 0 12px;
+      margin: 16px 0 10px;
       font-weight: 600;
       color: #0066CC;
     }
     .li-hashtags {
       color: #0066CC;
       font-weight: 600;
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 13.5px;
     }
-    
-    /* Visual Display Container */
+
+    /* Visual Media Container */
     .li-media-container {
       background: #070F1B;
       position: relative;
@@ -279,76 +289,64 @@
       padding: 12px;
       background: #060D17;
     }
-    .media-display img, .media-display svg {
+    .media-display img {
       max-width: 100%;
       height: auto;
-      max-height: 580px;
+      max-height: 560px;
       border-radius: 6px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.4);
       display: block;
     }
-    
-    /* Social Engagement Bar */
-    .li-engagement-stats {
-      padding: 10px 20px;
-      border-bottom: 1px solid #EBEBEB;
+
+    /* Editorial Meta Bar (Replacing fake likes) */
+    .li-editorial-meta {
+      background: #F8FAFC;
+      border-top: 1px solid #E5E7EB;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 12px;
-      color: #666666;
     }
-    .reactions-count {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .reaction-icons {
+    .quality-badge {
       display: inline-flex;
-      font-size: 14px;
-    }
-    .li-actions {
-      display: flex;
-      padding: 6px 12px;
-      justify-content: space-around;
-      border-top: 1px solid #F3F3F3;
-    }
-    .li-action-btn {
-      background: transparent;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      color: #5E5E5E;
-      font-size: 13.5px;
-      font-weight: 600;
-      display: flex;
       align-items: center;
       gap: 6px;
-      cursor: pointer;
-      transition: all 0.2s;
+      font-weight: 700;
+      color: #0284C7;
+      background: #E0F2FE;
+      padding: 4px 10px;
+      border-radius: 6px;
     }
-    .li-action-btn:hover {
-      background: #F3F3F3;
-      color: #000000;
+    .verif-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: #38BDF8;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid #38BDF8;
+      padding: 4px 10px;
+      border-radius: 6px;
     }
 
-    /* Right Column: Utilities & Strategy Sidebar */
+    /* Right Column: Toolbox & Strategy */
     .sidebar-panel {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
     }
     .utility-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 24px;
+      padding: 22px;
     }
     .card-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-main);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -356,120 +354,97 @@
     .action-btn-group {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
     .btn-action {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       color: var(--text-main);
-      padding: 12px 16px;
+      padding: 11px 16px;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
       transition: all 0.2s;
-      text-align: left;
     }
     .btn-action:hover {
       background: var(--bg-surface-hover);
       border-color: var(--primary);
       color: #fff;
-      transform: translateY(-1px);
     }
     .btn-action.btn-primary {
       background: var(--primary);
       border-color: var(--primary);
       color: #fff;
     }
-    .btn-action.btn-primary:hover {
-      background: #0052A3;
-    }
-    
-    /* Strategy Details */
+    .btn-action.btn-primary:hover { background: #0052A3; }
+
+    /* Strategy Meta List */
     .meta-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      font-size: 13.5px;
+      gap: 12px;
+      font-size: 13px;
     }
-    .meta-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    .meta-item { display: flex; flex-direction: column; gap: 3px; }
     .meta-label {
       color: var(--text-dim);
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-    .meta-value {
-      color: var(--text-main);
-      font-weight: 500;
-    }
+    .meta-value { color: var(--text-main); font-weight: 500; }
     .meta-badge {
       display: inline-block;
-      padding: 4px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       background: rgba(255,255,255,0.06);
       border: 1px solid var(--border-color);
+      width: fit-content;
     }
-    
-    /* Specifications Table */
+
+    /* Specs Table */
     .specs-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 12.5px;
-      margin-top: 8px;
     }
     .specs-table td {
-      padding: 8px 10px;
+      padding: 7px 10px;
       border-bottom: 1px solid var(--border-color);
     }
-    .spec-key {
-      color: var(--text-muted);
-      font-weight: 500;
-      width: 45%;
-    }
-    .spec-val {
-      color: var(--primary-light);
-      font-weight: 600;
-      font-family: var(--font-mono);
-    }
+    .spec-key { color: var(--text-muted); font-weight: 500; width: 45%; }
+    .spec-val { color: var(--primary-light); font-weight: 600; font-family: var(--font-mono); }
 
-    /* Toast Notification */
+    /* Toast */
     #toast {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 24px;
+      right: 24px;
       background: var(--bg-card);
       border: 1px solid var(--primary);
       color: #fff;
-      padding: 14px 22px;
-      border-radius: 10px;
-      font-size: 14px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13.5px;
       font-weight: 600;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       display: flex;
       align-items: center;
-      gap: 10px;
-      transform: translateY(100px);
+      gap: 8px;
+      transform: translateY(80px);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       z-index: 9999;
     }
-    #toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    #toast.show { transform: translateY(0); opacity: 1; }
 
-    /* Footer */
     footer.site-footer {
       border-top: 1px solid var(--border-color);
       background: #04080F;
@@ -482,32 +457,37 @@
 </head>
 <body>
 
-  <!-- Top Sticky Header -->
+  <!-- Editorial Top Notice -->
+  <div class="editorial-notice-bar">
+    <div>
+      <span class="notice-pill">EDITORIAL PREVIEW</span>
+      <span>Mockup view for internal technical review &amp; verification. (Not an active LinkedIn feed).</span>
+    </div>
+    <div>
+      <span>Quality Score: <strong>95/100</strong></span>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="header-left">
       <a href="../index.html">
         <img src="../assets/logo/logo.svg" alt="INDUS Industrial Robotics" class="brand-logo">
       </a>
       <div class="breadcrumbs">
-        <span class="breadcrumb-sep">/</span>
+        <span>/</span>
         <a href="../index.html">Studio</a>
-        <span class="breadcrumb-sep">/</span>
+        <span>/</span>
         <span>Engineering & Technology Insights</span>
-        <span class="breadcrumb-sep">/</span>
+        <span>/</span>
         <span class="badge-id">INDUS-LI-033</span>
       </div>
     </div>
     
     <div class="header-nav">
-      <a href="../02-ENGINEERING-INSIGHTS/INDUS-LI-032.html" class="btn-nav" title="Previous Post">
-        ← INDUS-LI-032
-      </a>
-      <a href="../index.html" class="btn-nav">
-        🏠 Content Studio
-      </a>
-      <a href="../02-ENGINEERING-INSIGHTS/INDUS-LI-034.html" class="btn-nav" title="Next Post">
-        INDUS-LI-034 →
-      </a>
+      <a href="../02-ENGINEERING-INSIGHTS/INDUS-LI-032.html" class="btn-nav" title="Previous Post">← INDUS-LI-032</a>
+      <a href="../index.html" class="btn-nav">🏠 Content Studio</a>
+      <a href="../02-ENGINEERING-INSIGHTS/INDUS-LI-034.html" class="btn-nav" title="Next Post">INDUS-LI-034 →</a>
     </div>
   </header>
 
@@ -515,10 +495,8 @@
   <main class="container">
     <div class="post-grid-layout">
       
-      <!-- Left Column: LinkedIn Post Card Preview -->
+      <!-- Left Column: LinkedIn Post Card -->
       <article class="linkedin-card" id="postCard">
-        
-        <!-- LinkedIn Header -->
         <div class="li-header">
           <div class="li-avatar">I</div>
           <div class="li-company-info">
@@ -526,74 +504,60 @@
               INDUS Industrial Robotics
               <span class="li-verified" title="Verified Organization">☑</span>
             </div>
-            <div class="li-subtitle">Precision Motion Systems & Industrial Automation · 48,500+ followers</div>
-            <div class="li-meta">Promoted · Engineering Insight · 🌐</div>
+            <div class="li-subtitle">Precision Motion Systems &amp; Industrial Automation · 48,500+ followers</div>
+            <div class="li-meta">Editorial Preview · B2B Engineering Communication · 🌐</div>
           </div>
         </div>
 
-        <!-- Post Body Content -->
         <div class="li-body">
-          <div class="li-hook">A robot wrist operating in a 45°C paint shop can reach internal temperatures of 110°C without proper conduction pathways.</div>
-          <p>Precision robot joints operate in completely sealed IP67 enclosures with zero fan ventilation. Heat from motor stators and gear friction must travel entirely through mechanical conduction.</p><p>INDUS uses high-thermal-conductivity ceramic potting compounds between motor windings and aluminum arm housings. Structural arm castings double as integrated finned heat sinks, keeping internal temperatures within the continuous operating envelope.</p>
+          <div class="li-hook">A robot wrist running in a 45°C ambient cell can reach core temperatures above 100°C without engineered conduction pathways.</div>
+          <p>In completely sealed IP67 enclosures, forced air fan cooling is impossible. All heat must dissipate via conduction and surface radiation.</p>
+          <p>INDUS applies high-thermal-conductivity ceramic potting between stator windings and aluminum joint housings. Structural castings serve as heat sink ribs, routing thermal flux directly away from delicate encoder discs and lubricant seals.</p>
+          <p>Lubricant viscosity remains stable and encoder optical discs avoid thermal expansion drift.</p>
           
-          <!-- Technical Specs Callout Box -->
           <div class="li-specs-box">
             <div class="li-specs-title">Key Technical Specifications</div>
             <ul class="li-specs-list">
-              <li><strong>Internal Enclosure:</strong> Sealed IP67 Pressure-Tight Joint Chambers</li><li><strong>Conduction Compound:</strong> Thermally Conductive Epoxy (2.8 W/m·K)</li><li><strong>Housing Material:</strong> A380 Die-Cast Aluminium Alloy</li><li><strong>Operating Ambient:</strong> -10°C to +50°C Harsh Environment</li><li><strong>Life Extension:</strong> Maintains Seal Elastomer Durometer Life</li>
+              <li><strong>Internal Environment:</strong> Sealed IP67 Pressure-Tight Joint Chamber</li><li><strong>Potting Compound:</strong> Thermally Conductive Epoxy (2.8 W/m·K)</li><li><strong>Housing Material:</strong> A380 Die-Cast Aluminium Alloy</li><li><strong>Ambient Tolerance:</strong> -10°C to +50°C Factory Floor</li><li><strong>Seal Protection:</strong> Prevents High-Temperature Elastomer Hardening</li>
             </ul>
           </div>
 
-          <div class="li-cta">Consult the INDUS Engineering Technical Reference Library for full whitepapers and kinematic calculation sheets.</div>
-          
-          <div class="li-hashtags">
-            #RoboticsEngineering #MotionControl #MechanicalEngineering #Automation #EngineeringInsights
-          </div>
+          <div class="li-cta">Consult the INDUS Technical Engineering Library for detailed calculation sheets.</div>
+          <div class="li-hashtags">#RoboticsEngineering #MotionControl #MechanicalDesign #AutomationInsights</div>
         </div>
 
-        <!-- Post Media Display (Infographic / Photo / Carousel) -->
+        <!-- Media Switcher -->
         <div class="li-media-container">
           <div class="media-tabs">
-            <button class="media-tab-btn active" onclick="switchMedia('infographic')">📊 Technical Infographic</button>
+            <button class="media-tab-btn active" onclick="switchMedia('infographic')">📊 System B</button>
             <button class="media-tab-btn" onclick="switchMedia('photo')">📷 Product Photo</button>
-            <button class="media-tab-btn" onclick="switchMedia('specs')">📐 Blueprint Specs</button>
+            <button class="media-tab-btn" onclick="switchMedia('specs')">📐 Technical Schematic</button>
           </div>
           
           <div class="media-display" id="mediaDisplay">
-            <img src="../assets/visuals/visual-033.svg" alt="Thermal Management in Closed Robotic Joints: Conduction Pathways & Heat Dissipation" id="activeMediaImg">
+            <img src="../assets/visuals/visual-033.svg" alt="Thermal Management in Sealed Robotic Joints: Conduction Pathways & Sintered Heat Pipes" id="activeMediaImg">
           </div>
         </div>
 
-        <!-- Engagement Bar -->
-        <div class="li-engagement-stats">
-          <div class="reactions-count">
-            <span class="reaction-icons">👍💡❤️</span>
-            <span>1,240 reactions · 88 comments · 42 reposts</span>
-          </div>
+        <!-- Editorial Verification Bar (Replaced fake likes) -->
+        <div class="li-editorial-meta">
+          <div class="quality-badge">⭐ Editorial Quality: 95/100</div>
+          <div class="verif-badge">🛡️ General Engineering</div>
         </div>
-
-        <div class="li-actions">
-          <button class="li-action-btn">👍 Like</button>
-          <button class="li-action-btn">💬 Comment</button>
-          <button class="li-action-btn">🔁 Repost</button>
-          <button class="li-action-btn">📤 Send</button>
-        </div>
-
       </article>
 
-      <!-- Right Column: Content Publishing Utilities -->
+      <!-- Right Column: Toolbox & Strategy -->
       <aside class="sidebar-panel">
         
-        <!-- Utility Actions Card -->
         <div class="utility-card">
-          <h2 class="card-title">⚡ Creator Tools</h2>
+          <h2 class="card-title">⚡ Publishing Tools</h2>
           <div class="action-btn-group">
             <button class="btn-action btn-primary" onclick="copyCaption()">
               <span>📋 Copy LinkedIn Caption</span>
               <span>↵</span>
             </button>
             <button class="btn-action" onclick="copyHashtags()">
-              <span>🏷️ Copy Hashtags Only</span>
+              <span>🏷️ Copy Hashtags</span>
               <span>#</span>
             </button>
             <button class="btn-action" onclick="copyCompletePost()">
@@ -601,7 +565,7 @@
               <span>All</span>
             </button>
             <a href="../assets/visuals/visual-033.svg" download="INDUS-LI-033-visual.svg" class="btn-action">
-              <span>📥 Download Visual Graphic</span>
+              <span>📥 Download Visual (SVG)</span>
               <span>SVG</span>
             </a>
             <button class="btn-action" onclick="copyPostURL()">
@@ -615,40 +579,36 @@
           </div>
         </div>
 
-        <!-- Content Strategy & Metadata Card -->
         <div class="utility-card">
-          <h2 class="card-title">🎯 Post Strategy</h2>
+          <h2 class="card-title">🎯 Technical Credibility &amp; Strategy</h2>
           <div class="meta-list">
             <div class="meta-item">
-              <span class="meta-label">Category</span>
-              <span class="meta-badge">Engineering & Technology Insights</span>
+              <span class="meta-label">Verification Status</span>
+              <span class="meta-badge" style="border-color: #38BDF8; color: #38BDF8; font-weight: bold;">General Engineering</span>
             </div>
             <div class="meta-item">
-              <span class="meta-label">Content Format</span>
-              <span class="meta-badge">Technical Explainer</span>
+              <span class="meta-label">Verification Note</span>
+              <span class="meta-value" style="font-size: 12px; color: var(--text-muted);">Standard mechanical/kinematic engineering principles and ISO standards.</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Editorial Status</span>
+              <span class="meta-value" style="color: var(--secondary-light); font-weight: 600;">Approved for Publishing</span>
             </div>
             <div class="meta-item">
               <span class="meta-label">Target Audience</span>
               <span class="meta-value">Thermal & Mechanical Design Engineers</span>
             </div>
             <div class="meta-item">
-              <span class="meta-label">Content Objective</span>
-              <span class="meta-value">Review thermal resistance networks, potting compounds, and heat sink link geometry.</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">Suggested Peak Posting Schedule</span>
-              <span class="meta-value" style="color: var(--secondary-light); font-weight: 600;">Tuesday 10:00 AM EST</span>
+              <span class="meta-label">Suggested IST Posting Window</span>
+              <span class="meta-value" style="color: var(--primary-light); font-weight: 600;">Tuesday 02:30 PM IST - Engineering Deep Dive</span>
             </div>
           </div>
         </div>
 
-        <!-- Technical Parameters Card -->
         <div class="utility-card">
-          <h2 class="card-title">⚙️ Engineering Specs</h2>
+          <h2 class="card-title">⚙️ Verified Specifications</h2>
           <table class="specs-table">
-            <tbody>
-              <tr><td class='spec-key'>Internal Enclosure</td><td class='spec-val'>Sealed IP67 Pressure-Tight Joint Chambers</td></tr><tr><td class='spec-key'>Conduction Compound</td><td class='spec-val'>Thermally Conductive Epoxy (2.8 W/m·K)</td></tr><tr><td class='spec-key'>Housing Material</td><td class='spec-val'>A380 Die-Cast Aluminium Alloy</td></tr><tr><td class='spec-key'>Operating Ambient</td><td class='spec-val'>-10°C to +50°C Harsh Environment</td></tr><tr><td class='spec-key'>Life Extension</td><td class='spec-val'>Maintains Seal Elastomer Durometer Life</td></tr>
-            </tbody>
+            <tbody><tr><td class='spec-key'>Internal Environment</td><td class='spec-val'>Sealed IP67 Pressure-Tight Joint Chamber</td></tr><tr><td class='spec-key'>Potting Compound</td><td class='spec-val'>Thermally Conductive Epoxy (2.8 W/m·K)</td></tr><tr><td class='spec-key'>Housing Material</td><td class='spec-val'>A380 Die-Cast Aluminium Alloy</td></tr><tr><td class='spec-key'>Ambient Tolerance</td><td class='spec-val'>-10°C to +50°C Factory Floor</td></tr><tr><td class='spec-key'>Seal Protection</td><td class='spec-val'>Prevents High-Temperature Elastomer Hardening</td></tr></tbody>
           </table>
         </div>
 
@@ -657,59 +617,40 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <p>INDUS LinkedIn Content Studio · 100 Production-Ready B2B Industrial Robotics Communication Assets</p>
-    <p style="margin-top: 4px; color: #475569;">Precision Motion Systems · Built for Global Manufacturing Automation</p>
+    <p>INDUS Industrial Robotics · Precision Motion Systems Division</p>
+    <p style="margin-top: 4px; color: #475569;">100 Production-Ready B2B Industrial Robotics Communication Assets</p>
   </footer>
 
-  <!-- Toast Notification -->
   <div id="toast">
     <span id="toastIcon">✅</span>
     <span id="toastMsg">Copied to clipboard!</span>
   </div>
 
   <script>
-    const POST_DATA = {"id": "INDUS-LI-033", "title": "Thermal Management in Closed Robotic Joints: Conduction Pathways & Heat Dissipation", "hook": "A robot wrist operating in a 45\u00b0C paint shop can reach internal temperatures of 110\u00b0C without proper conduction pathways.", "body": "Precision robot joints operate in completely sealed IP67 enclosures with zero fan ventilation. Heat from motor stators and gear friction must travel entirely through mechanical conduction.\n\nINDUS uses high-thermal-conductivity ceramic potting compounds between motor windings and aluminum arm housings. Structural arm castings double as integrated finned heat sinks, keeping internal temperatures within the continuous operating envelope.", "caption": "A robot wrist operating in a 45\u00b0C paint shop can reach internal temperatures of 110\u00b0C without proper conduction pathways.\n\nPrecision robot joints operate in completely sealed IP67 enclosures with zero fan ventilation. Heat from motor stators and gear friction must travel entirely through mechanical conduction.\n\nINDUS uses high-thermal-conductivity ceramic potting compounds between motor windings and aluminum arm housings. Structural arm castings double as integrated finned heat sinks, keeping internal temperatures within the continuous operating envelope.\n\nKey Technical Specifications:\n\u2022 Internal Enclosure: Sealed IP67 Pressure-Tight Joint Chambers\n\u2022 Conduction Compound: Thermally Conductive Epoxy (2.8 W/m\u00b7K)\n\u2022 Housing Material: A380 Die-Cast Aluminium Alloy\n\u2022 Operating Ambient: -10\u00b0C to +50\u00b0C Harsh Environment\n\u2022 Life Extension: Maintains Seal Elastomer Durometer Life\n\nConsult the INDUS Engineering Technical Reference Library for full whitepapers and kinematic calculation sheets.\n\n#RoboticsEngineering #MotionControl #MechanicalEngineering #Automation #EngineeringInsights", "hashtags": "#RoboticsEngineering #MotionControl #MechanicalEngineering #Automation #EngineeringInsights", "cta": "Consult the INDUS Engineering Technical Reference Library for full whitepapers and kinematic calculation sheets.", "svg": "../assets/visuals/visual-033.svg", "photo": "../assets/products/rotary-actuator.jpg"};
+    const POST_DATA = {"id": "INDUS-LI-033", "title": "Thermal Management in Sealed Robotic Joints: Conduction Pathways & Sintered Heat Pipes", "caption": "A robot wrist running in a 45\u00b0C ambient cell can reach core temperatures above 100\u00b0C without engineered conduction pathways.\n\nIn completely sealed IP67 enclosures, forced air fan cooling is impossible. All heat must dissipate via conduction and surface radiation.\n\nINDUS applies high-thermal-conductivity ceramic potting between stator windings and aluminum joint housings. Structural castings serve as heat sink ribs, routing thermal flux directly away from delicate encoder discs and lubricant seals.\n\nLubricant viscosity remains stable and encoder optical discs avoid thermal expansion drift.\n\nKey Technical Specifications:\n\u2022 Internal Environment: Sealed IP67 Pressure-Tight Joint Chamber\n\u2022 Potting Compound: Thermally Conductive Epoxy (2.8 W/m\u00b7K)\n\u2022 Housing Material: A380 Die-Cast Aluminium Alloy\n\u2022 Ambient Tolerance: -10\u00b0C to +50\u00b0C Factory Floor\n\u2022 Seal Protection: Prevents High-Temperature Elastomer Hardening\n\nConsult the INDUS Technical Engineering Library for detailed calculation sheets.\n\n#RoboticsEngineering #MotionControl #MechanicalDesign #AutomationInsights", "hook": "A robot wrist running in a 45\u00b0C ambient cell can reach core temperatures above 100\u00b0C without engineered conduction pathways.", "context": "In completely sealed IP67 enclosures, forced air fan cooling is impossible. All heat must dissipate via conduction and surface radiation.", "insight": "INDUS applies high-thermal-conductivity ceramic potting between stator windings and aluminum joint housings. Structural castings serve as heat sink ribs, routing thermal flux directly away from delicate encoder discs and lubricant seals.", "value": "Lubricant viscosity remains stable and encoder optical discs avoid thermal expansion drift.", "hashtags": "#RoboticsEngineering #MotionControl #MechanicalDesign #AutomationInsights", "cta": "Consult the INDUS Technical Engineering Library for detailed calculation sheets.", "svg": "../assets/visuals/visual-033.svg", "photo": "../assets/products/rotary-actuator.jpg"};
 
     function showToast(msg, icon = "✅") {
       const toast = document.getElementById("toast");
       document.getElementById("toastMsg").innerText = msg;
       document.getElementById("toastIcon").innerText = icon;
       toast.classList.add("show");
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 3000);
+      setTimeout(() => toast.classList.remove("show"), 2800);
     }
 
     function copyToClipboard(text, successMsg) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(successMsg);
-      }).catch(err => {
-        showToast("Error copying to clipboard", "❌");
-      });
+      navigator.clipboard.writeText(text).then(() => showToast(successMsg)).catch(() => showToast("Copy error", "❌"));
     }
 
     function copyCaption() {
-      const text = POST_DATA.hook + "\n\n" + POST_DATA.body + "\n\n" + POST_DATA.cta;
+      const text = POST_DATA.hook + "\n\n" + POST_DATA.context + "\n\n" + POST_DATA.insight + "\n\n" + POST_DATA.value + "\n\n" + POST_DATA.cta;
       copyToClipboard(text, "Caption copied to clipboard!");
     }
 
-    function copyHashtags() {
-      copyToClipboard(POST_DATA.hashtags, "Hashtags copied to clipboard!");
-    }
-
-    function copyCompletePost() {
-      copyToClipboard(POST_DATA.caption, "Complete post copied to clipboard!");
-    }
-
-    function copyPostURL() {
-      copyToClipboard(window.location.href, "Post URL copied to clipboard!");
-    }
-
-    function copyPostID() {
-      copyToClipboard(POST_DATA.id, "Post ID copied to clipboard!");
-    }
+    function copyHashtags() { copyToClipboard(POST_DATA.hashtags, "Hashtags copied!"); }
+    function copyCompletePost() { copyToClipboard(POST_DATA.caption, "Complete post copied!"); }
+    function copyPostURL() { copyToClipboard(window.location.href, "Post URL copied!"); }
+    function copyPostID() { copyToClipboard(POST_DATA.id, "Post ID copied!"); }
 
     function switchMedia(type) {
       const img = document.getElementById("activeMediaImg");
