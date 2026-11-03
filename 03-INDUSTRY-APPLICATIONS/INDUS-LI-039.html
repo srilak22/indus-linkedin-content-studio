@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INDUS-LI-039 - Semiconductor Wafer Handling in ISO Class 1 Cleanrooms: Non-Outgassing End-Effectors | INDUS LinkedIn Content Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #070F1B;
+      --bg-card: #0B192C;
+      --bg-surface: #1E293B;
+      --bg-surface-hover: #334155;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-color-focus: #0066CC;
+      --primary: #0066CC;
+      --primary-light: #38BDF8;
+      --secondary: #FF6B00;
+      --secondary-light: #FDBA74;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --success: #10B981;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: var(--primary-light); text-decoration: none; transition: all 0.2s; }
+    a:hover { color: var(--secondary); }
+    
+    /* Top Header */
+    header.site-header {
+      background: rgba(11, 25, 44, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-logo {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .breadcrumb-sep { color: var(--text-dim); }
+    .badge-id {
+      background: rgba(0, 102, 204, 0.2);
+      border: 1px solid var(--primary);
+      color: var(--primary-light);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+    }
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-nav {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover {
+      background: var(--bg-surface-hover);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    
+    /* Main Layout */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      width: 100%;
+      flex: 1;
+    }
+    .post-grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 1080px) {
+      .post-grid-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Column: LinkedIn Post Card */
+    .linkedin-card {
+      background: #FFFFFF;
+      color: #191919;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      border: 1px solid #E0E0E0;
+    }
+    .li-header {
+      padding: 16px 20px 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border-bottom: 1px solid #F3F3F3;
+    }
+    .li-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      background: #0B192C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 20px;
+      border: 2px solid #0066CC;
+      flex-shrink: 0;
+    }
+    .li-company-info { flex: 1; }
+    .li-company-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .li-verified {
+      color: #0066CC;
+      font-size: 14px;
+    }
+    .li-subtitle {
+      font-size: 12px;
+      color: #666666;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .li-meta {
+      font-size: 12px;
+      color: #888888;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+    }
+    
+    /* Post Content */
+    .li-body {
+      padding: 16px 20px;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #1A1A1A;
+    }
+    .li-hook {
+      font-size: 16px;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .li-body p {
+      margin-bottom: 12px;
+    }
+    .li-specs-box {
+      background: #F8FAFC;
+      border-left: 4px solid #0066CC;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+    }
+    .li-specs-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #0066CC;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .li-specs-list {
+      list-style: none;
+    }
+    .li-specs-list li {
+      font-size: 13.5px;
+      color: #334155;
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .li-specs-list li::before {
+      content: "•";
+      color: #0066CC;
+      font-weight: bold;
+    }
+    .li-cta {
+      margin: 16px 0 12px;
+      font-weight: 600;
+      color: #0066CC;
+    }
+    .li-hashtags {
+      color: #0066CC;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    
+    /* Visual Display Container */
+    .li-media-container {
+      background: #070F1B;
+      position: relative;
+      border-top: 1px solid #E5E7EB;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .media-tabs {
+      display: flex;
+      background: #0B192C;
+      border-bottom: 1px solid var(--border-color);
+      padding: 6px 12px;
+      gap: 8px;
+    }
+    .media-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .media-tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+    }
+    .media-display {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      background: #060D17;
+    }
+    .media-display img, .media-display svg {
+      max-width: 100%;
+      height: auto;
+      max-height: 580px;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      display: block;
+    }
+    
+    /* Social Engagement Bar */
+    .li-engagement-stats {
+      padding: 10px 20px;
+      border-bottom: 1px solid #EBEBEB;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666666;
+    }
+    .reactions-count {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .reaction-icons {
+      display: inline-flex;
+      font-size: 14px;
+    }
+    .li-actions {
+      display: flex;
+      padding: 6px 12px;
+      justify-content: space-around;
+      border-top: 1px solid #F3F3F3;
+    }
+    .li-action-btn {
+      background: transparent;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      color: #5E5E5E;
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .li-action-btn:hover {
+      background: #F3F3F3;
+      color: #000000;
+    }
+
+    /* Right Column: Utilities & Strategy Sidebar */
+    .sidebar-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .utility-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .action-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn-action {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: left;
+    }
+    .btn-action:hover {
+      background: var(--bg-surface-hover);
+      border-color: var(--primary);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .btn-action.btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .btn-action.btn-primary:hover {
+      background: #0052A3;
+    }
+    
+    /* Strategy Details */
+    .meta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 13.5px;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta-label {
+      color: var(--text-dim);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .meta-value {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    .meta-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border-color);
+    }
+    
+    /* Specifications Table */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-top: 8px;
+    }
+    .specs-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .spec-key {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 45%;
+    }
+    .spec-val {
+      color: var(--primary-light);
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--primary);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 9999;
+    }
+    #toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer.site-footer {
+      border-top: 1px solid var(--border-color);
+      background: #04080F;
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="../index.html">
+        <img src="../assets/logo/logo.svg" alt="INDUS Industrial Robotics" class="brand-logo">
+      </a>
+      <div class="breadcrumbs">
+        <span class="breadcrumb-sep">/</span>
+        <a href="../index.html">Studio</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Industry Applications</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="badge-id">INDUS-LI-039</span>
+      </div>
+    </div>
+    
+    <div class="header-nav">
+      <a href="../03-INDUSTRY-APPLICATIONS/INDUS-LI-038.html" class="btn-nav" title="Previous Post">
+        ← INDUS-LI-038
+      </a>
+      <a href="../index.html" class="btn-nav">
+        🏠 Content Studio
+      </a>
+      <a href="../03-INDUSTRY-APPLICATIONS/INDUS-LI-040.html" class="btn-nav" title="Next Post">
+        INDUS-LI-040 →
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    <div class="post-grid-layout">
+      
+      <!-- Left Column: LinkedIn Post Card Preview -->
+      <article class="linkedin-card" id="postCard">
+        
+        <!-- LinkedIn Header -->
+        <div class="li-header">
+          <div class="li-avatar">I</div>
+          <div class="li-company-info">
+            <div class="li-company-title">
+              INDUS Industrial Robotics
+              <span class="li-verified" title="Verified Organization">☑</span>
+            </div>
+            <div class="li-subtitle">Precision Motion Systems & Industrial Automation · 48,500+ followers</div>
+            <div class="li-meta">Promoted · Engineering Insight · 🌐</div>
+          </div>
+        </div>
+
+        <!-- Post Body Content -->
+        <div class="li-body">
+          <div class="li-hook">Here is how modern robotic automation is transforming Semiconductor Wafer Handling in ISO Class 1 Cleanrooms.</div>
+          <p>In 300 mm silicon wafer manufacturing, a single microscopic airborne particle can destroy an entire microchip die. Mechanical friction, outgassing greases, and electrostatic discharge (ESD) are strictly prohibited.</p><p>INDUS atmospheric wafer handling robots feature magnetic direct-drive brushless joints, vacuum-retained ceramic end-effectors, and ultra-conductive dissipative coatings to transport 300 mm wafers between FOUPs and vacuum load-locks with zero contamination.</p>
+          
+          <!-- Technical Specs Callout Box -->
+          <div class="li-specs-box">
+            <div class="li-specs-title">Key Technical Specifications</div>
+            <ul class="li-specs-list">
+              <li><strong>Cleanroom Certification:</strong> ISO Class 1 (Fed-Std 209E Class 1)</li><li><strong>Wafer Compatibility:</strong> 200 mm & 300 mm Silicon Wafers</li><li><strong>ESD Protection:</strong> Surface Resistivity 10^6 – 10^9 Ohms/sq</li><li><strong>End-Effector Material:</strong> High-Purity Sintered Alumina Ceramic</li><li><strong>Transfer Repeatability:</strong> ± 0.01 mm Across Full Radial Stroke</li>
+            </ul>
+          </div>
+
+          <div class="li-cta">Download the complete Industry Application Engineering Dossier and workcell layout schematics.</div>
+          
+          <div class="li-hashtags">
+            #RoboticsApplication #SmartManufacturing #AutomationSolutions #IndustrialEngineering #Industry40
+          </div>
+        </div>
+
+        <!-- Post Media Display (Infographic / Photo / Carousel) -->
+        <div class="li-media-container">
+          <div class="media-tabs">
+            <button class="media-tab-btn active" onclick="switchMedia('infographic')">📊 Technical Infographic</button>
+            <button class="media-tab-btn" onclick="switchMedia('photo')">📷 Product Photo</button>
+            <button class="media-tab-btn" onclick="switchMedia('specs')">📐 Blueprint Specs</button>
+          </div>
+          
+          <div class="media-display" id="mediaDisplay">
+            <img src="../assets/visuals/visual-039.svg" alt="Semiconductor Wafer Handling in ISO Class 1 Cleanrooms: Non-Outgassing End-Effectors" id="activeMediaImg">
+          </div>
+        </div>
+
+        <!-- Engagement Bar -->
+        <div class="li-engagement-stats">
+          <div class="reactions-count">
+            <span class="reaction-icons">👍💡❤️</span>
+            <span>1,240 reactions · 88 comments · 42 reposts</span>
+          </div>
+        </div>
+
+        <div class="li-actions">
+          <button class="li-action-btn">👍 Like</button>
+          <button class="li-action-btn">💬 Comment</button>
+          <button class="li-action-btn">🔁 Repost</button>
+          <button class="li-action-btn">📤 Send</button>
+        </div>
+
+      </article>
+
+      <!-- Right Column: Content Publishing Utilities -->
+      <aside class="sidebar-panel">
+        
+        <!-- Utility Actions Card -->
+        <div class="utility-card">
+          <h2 class="card-title">⚡ Creator Tools</h2>
+          <div class="action-btn-group">
+            <button class="btn-action btn-primary" onclick="copyCaption()">
+              <span>📋 Copy LinkedIn Caption</span>
+              <span>↵</span>
+            </button>
+            <button class="btn-action" onclick="copyHashtags()">
+              <span>🏷️ Copy Hashtags Only</span>
+              <span>#</span>
+            </button>
+            <button class="btn-action" onclick="copyCompletePost()">
+              <span>📝 Copy Full Post Text</span>
+              <span>All</span>
+            </button>
+            <a href="../assets/visuals/visual-039.svg" download="INDUS-LI-039-visual.svg" class="btn-action">
+              <span>📥 Download Visual Graphic</span>
+              <span>SVG</span>
+            </a>
+            <button class="btn-action" onclick="copyPostURL()">
+              <span>🔗 Copy Post URL</span>
+              <span>URL</span>
+            </button>
+            <button class="btn-action" onclick="copyPostID()">
+              <span>🪪 Copy Post ID: INDUS-LI-039</span>
+              <span>ID</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Content Strategy & Metadata Card -->
+        <div class="utility-card">
+          <h2 class="card-title">🎯 Post Strategy</h2>
+          <div class="meta-list">
+            <div class="meta-item">
+              <span class="meta-label">Category</span>
+              <span class="meta-badge">Industry Applications</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Content Format</span>
+              <span class="meta-badge">Case Study / Problem-Solution</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Target Audience</span>
+              <span class="meta-value">Semiconductor Fab Directors & Equipment OEMs</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Content Objective</span>
+              <span class="meta-value">Demonstrate domain-specific robotic automation, technical architecture, and measurable operational ROI.</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Suggested Peak Posting Schedule</span>
+              <span class="meta-value" style="color: var(--secondary-light); font-weight: 600;">Thursday 11:00 AM EST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Parameters Card -->
+        <div class="utility-card">
+          <h2 class="card-title">⚙️ Engineering Specs</h2>
+          <table class="specs-table">
+            <tbody>
+              <tr><td class='spec-key'>Cleanroom Certification</td><td class='spec-val'>ISO Class 1 (Fed-Std 209E Class 1)</td></tr><tr><td class='spec-key'>Wafer Compatibility</td><td class='spec-val'>200 mm & 300 mm Silicon Wafers</td></tr><tr><td class='spec-key'>ESD Protection</td><td class='spec-val'>Surface Resistivity 10^6 – 10^9 Ohms/sq</td></tr><tr><td class='spec-key'>End-Effector Material</td><td class='spec-val'>High-Purity Sintered Alumina Ceramic</td></tr><tr><td class='spec-key'>Transfer Repeatability</td><td class='spec-val'>± 0.01 mm Across Full Radial Stroke</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>INDUS LinkedIn Content Studio · 100 Production-Ready B2B Industrial Robotics Communication Assets</p>
+    <p style="margin-top: 4px; color: #475569;">Precision Motion Systems · Built for Global Manufacturing Automation</p>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast">
+    <span id="toastIcon">✅</span>
+    <span id="toastMsg">Copied to clipboard!</span>
+  </div>
+
+  <script>
+    const POST_DATA = {"id": "INDUS-LI-039", "title": "Semiconductor Wafer Handling in ISO Class 1 Cleanrooms: Non-Outgassing End-Effectors", "hook": "Here is how modern robotic automation is transforming Semiconductor Wafer Handling in ISO Class 1 Cleanrooms.", "body": "In 300 mm silicon wafer manufacturing, a single microscopic airborne particle can destroy an entire microchip die. Mechanical friction, outgassing greases, and electrostatic discharge (ESD) are strictly prohibited.\n\nINDUS atmospheric wafer handling robots feature magnetic direct-drive brushless joints, vacuum-retained ceramic end-effectors, and ultra-conductive dissipative coatings to transport 300 mm wafers between FOUPs and vacuum load-locks with zero contamination.", "caption": "Here is how modern robotic automation is transforming Semiconductor Wafer Handling in ISO Class 1 Cleanrooms.\n\nIn 300 mm silicon wafer manufacturing, a single microscopic airborne particle can destroy an entire microchip die. Mechanical friction, outgassing greases, and electrostatic discharge (ESD) are strictly prohibited.\n\nINDUS atmospheric wafer handling robots feature magnetic direct-drive brushless joints, vacuum-retained ceramic end-effectors, and ultra-conductive dissipative coatings to transport 300 mm wafers between FOUPs and vacuum load-locks with zero contamination.\n\nKey Technical Specifications:\n\u2022 Cleanroom Certification: ISO Class 1 (Fed-Std 209E Class 1)\n\u2022 Wafer Compatibility: 200 mm & 300 mm Silicon Wafers\n\u2022 ESD Protection: Surface Resistivity 10^6 \u2013 10^9 Ohms/sq\n\u2022 End-Effector Material: High-Purity Sintered Alumina Ceramic\n\u2022 Transfer Repeatability: \u00b1 0.01 mm Across Full Radial Stroke\n\nDownload the complete Industry Application Engineering Dossier and workcell layout schematics.\n\n#RoboticsApplication #SmartManufacturing #AutomationSolutions #IndustrialEngineering #Industry40", "hashtags": "#RoboticsApplication #SmartManufacturing #AutomationSolutions #IndustrialEngineering #Industry40", "cta": "Download the complete Industry Application Engineering Dossier and workcell layout schematics.", "svg": "../assets/visuals/visual-039.svg", "photo": "../assets/products/scara-robot.jpg"};
+
+    function showToast(msg, icon = "✅") {
+      const toast = document.getElementById("toast");
+      document.getElementById("toastMsg").innerText = msg;
+      document.getElementById("toastIcon").innerText = icon;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+
+    function copyToClipboard(text, successMsg) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMsg);
+      }).catch(err => {
+        showToast("Error copying to clipboard", "❌");
+      });
+    }
+
+    function copyCaption() {
+      const text = POST_DATA.hook + "\n\n" + POST_DATA.body + "\n\n" + POST_DATA.cta;
+      copyToClipboard(text, "Caption copied to clipboard!");
+    }
+
+    function copyHashtags() {
+      copyToClipboard(POST_DATA.hashtags, "Hashtags copied to clipboard!");
+    }
+
+    function copyCompletePost() {
+      copyToClipboard(POST_DATA.caption, "Complete post copied to clipboard!");
+    }
+
+    function copyPostURL() {
+      copyToClipboard(window.location.href, "Post URL copied to clipboard!");
+    }
+
+    function copyPostID() {
+      copyToClipboard(POST_DATA.id, "Post ID copied to clipboard!");
+    }
+
+    function switchMedia(type) {
+      const img = document.getElementById("activeMediaImg");
+      const btns = document.querySelectorAll(".media-tab-btn");
+      btns.forEach(b => b.classList.remove("active"));
+      
+      if (type === "infographic") {
+        img.src = POST_DATA.svg;
+        btns[0].classList.add("active");
+      } else if (type === "photo") {
+        img.src = POST_DATA.photo;
+        btns[1].classList.add("active");
+      } else if (type === "specs") {
+        img.src = POST_DATA.svg;
+        btns[2].classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>
