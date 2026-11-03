@@ -19,12 +19,12 @@
  * - LINKEDIN_REFRESH_TOKEN : OAuth 2.0 refresh token
  * - LINKEDIN_CLIENT_ID     : LinkedIn Developer Application Client ID
  * - LINKEDIN_CLIENT_SECRET : LinkedIn Developer Application Client Secret
- * - LINKEDIN_ORG_URN       : urn:li:organization:<ID> (default: urn:li:organization:106400000)
+ * - LINKEDIN_ORG_URN       : urn:li:organization:<ID> (default: urn:li:organization:144005992)
  */
 
 var CONFIG = {
   TIMEZONE: 'Asia/Kolkata',
-  DEFAULT_ORG_URN: 'urn:li:organization:106400000',
+  DEFAULT_ORG_URN: 'urn:li:organization:144005992',
   LINKEDIN_API_VERSION: '202404',
   LINKEDIN_RESTLI_VERSION: '2.0.0',
   POSTS_API_URL: 'https://api.linkedin.com/rest/posts',
