@@ -1,145 +1,136 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#070F1B"/>
-      <stop offset="50%" stop-color="#0B192C"/>
-      <stop offset="100%" stop-color="#1E293B"/>
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0066CC"/>
-      <stop offset="100%" stop-color="#FF6B00"/>
+    <linearGradient id="bgGradC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050C16"/>
+      <stop offset="50%" stop-color="#0A1828"/>
+      <stop offset="100%" stop-color="#122538"/>
     </linearGradient>
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.07)"/>
+      <stop offset="0%" stop-color="rgba(255,255,255,0.06)"/>
       <stop offset="100%" stop-color="rgba(255,255,255,0.02)"/>
     </linearGradient>
-    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-    </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="1200" fill="url(#bgGrad)"/>
-  <rect width="1200" height="1200" fill="url(#gridPattern)"/>
+  <rect width="1200" height="1200" fill="url(#bgGradC)"/>
 
-  <!-- Subtle glow circles -->
-  <circle cx="200" cy="200" r="300" fill="#0066CC" opacity="0.08" filter="blur(80px)"/>
-  <circle cx="1000" cy="1000" r="300" fill="#FF6B00" opacity="0.06" filter="blur(90px)"/>
+  <!-- Frame -->
+  <rect x="40" y="40" width="1120" height="1120" rx="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <line x1="40" y1="150" x2="1160" y2="150" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
 
-  <!-- Outer frame border -->
-  <rect x="40" y="40" width="1120" height="1120" rx="24" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
-  <line x1="40" y1="160" x2="1160" y2="160" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-
-  <!-- Header Branding -->
-  <g transform="translate(80, 75)">
+  <!-- Header -->
+  <g transform="translate(80, 70)">
     <polygon points="0,0 28,0 42,22 28,45 0,45 14,22" fill="#0066CC"/>
     <circle cx="21" cy="22" r="7" fill="#FF6B00"/>
     <text x="60" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="22" fill="#FFFFFF" letter-spacing="2">INDUS</text>
-    <text x="60" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#94A3B8" letter-spacing="2.5">INDUSTRIAL ROBOTICS</text>
+    <text x="60" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="11" fill="#94A3B8" letter-spacing="2.5">INDUSTRY APPLICATIONS</text>
   </g>
 
-  <!-- Badges -->
-  <g transform="translate(860, 85)">
-    <rect x="0" y="0" width="120" height="34" rx="17" fill="#0066CC" opacity="0.2"/>
-    <rect x="0" y="0" width="120" height="34" rx="17" fill="none" stroke="#0066CC" stroke-width="1"/>
-    <text x="60" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#60A5FA" text-anchor="middle">INDUS-LI-049</text>
+  <g transform="translate(820, 80)">
+    <rect x="0" y="0" width="130" height="32" rx="16" fill="rgba(0,102,204,0.2)" stroke="#0066CC" stroke-width="1"/>
+    <text x="65" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="12" fill="#60A5FA" text-anchor="middle">INDUS-LI-049</text>
     
-    <rect x="135" y="0" width="85" height="34" rx="17" fill="#FF6B00" opacity="0.2"/>
-    <rect x="135" y="0" width="85" height="34" rx="17" fill="none" stroke="#FF6B00" stroke-width="1"/>
-    <text x="177" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#FDBA74" text-anchor="middle">REV 2.0</text>
+    <rect x="145" y="0" width="155" height="32" rx="16" fill="rgba(255,107,0,0.15)" stroke="#FF6B00" stroke-width="1"/>
+    <text x="222" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="12" fill="#FDBA74" text-anchor="middle">WORKCELL DEPLOYMENT</text>
   </g>
 
   <!-- Category Tag -->
-  <g transform="translate(80, 210)">
-    <rect x="0" y="0" width="340" height="36" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-    <circle cx="18" cy="18" r="5" fill="#FF6B00"/>
-    <text x="34" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="13" fill="#94A3B8" letter-spacing="1.5">INDUSTRY APPLICATIONS</text>
+  <g transform="translate(80, 190)">
+    <rect x="0" y="0" width="360" height="34" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <circle cx="16" cy="17" r="5" fill="#FF6B00"/>
+    <text x="32" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="12" fill="#94A3B8" letter-spacing="1">INDUSTRY APPLICATIONS</text>
   </g>
 
-  <!-- Post Main Title -->
-  <text x="80" y="310" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="44" fill="#FFFFFF" width="1040">
+  <!-- Main Headline -->
+  <text x="80" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="42" fill="#FFFFFF">
     <tspan x="80" dy="0">Plastic Injection Moulding</tspan>
-    <tspan x="80" dy="54" fill="#38BDF8"></tspan>
+    <tspan x="80" dy="50" fill="#38BDF8"></tspan>
   </text>
 
-  <!-- Central Technical Graphic / Blueprint Frame -->
-  <g transform="translate(80, 410)">
-    <rect width="1040" height="420" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-    
-    <!-- Schematic Geometry / Kinematic Articulation Diagram -->
-    <g transform="translate(520, 210)" stroke="#38BDF8" fill="none" opacity="0.85">
-      <!-- Concentric circles -->
-      <circle cx="0" cy="0" r="160" stroke-dasharray="6 6" stroke-width="1.5" stroke="#94A3B8"/>
-      <circle cx="0" cy="0" r="120" stroke-width="2"/>
-      <circle cx="0" cy="0" r="80" stroke-dasharray="4 4" stroke-width="1.5"/>
-      <circle cx="0" cy="0" r="35" fill="rgba(0,102,204,0.3)" stroke="#FF6B00" stroke-width="3"/>
-      
-      <!-- Coordinate crosshair -->
-      <line x1="-180" y1="0" x2="180" y2="0" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-      <line x1="0" y1="-180" x2="0" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-      
-      <!-- Vector arrows -->
-      <path d="M 0 0 L 110 -60" stroke="#FF6B00" stroke-width="3"/>
-      <polygon points="110,-60 98,-50 102,-68" fill="#FF6B00"/>
-      <text x="120" y="-65" font-family="monospace" font-size="14" fill="#FDBA74" font-weight="bold">Torque Vector τ</text>
-      
-      <path d="M 0 0 L -80 -100" stroke="#00E5FF" stroke-width="3"/>
-      <polygon points="-80,-100 -68,-92 -85,-88" fill="#00E5FF"/>
-      <text x="-160" y="-105" font-family="monospace" font-size="14" fill="#67E8F9" font-weight="bold">Angular Velocity ω</text>
+  <!-- Center Artwork: Industrial Automation Cell Process Flow -->
+  <g transform="translate(80, 385)">
+    <rect width="1040" height="445" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+    <text x="40" y="45" font-family="monospace" font-size="12" fill="#64748B" letter-spacing="1.5">MANUFACTURING CELL ARCHITECTURE // 3-STAGE WORKFLOW</text>
 
-      <path d="M 0 0 L 80 110" stroke="#10B981" stroke-width="2.5" stroke-dasharray="4 2"/>
-      <text x="95" y="125" font-family="monospace" font-size="14" fill="#6EE7B7" font-weight="bold">Reaction Force F_r</text>
+    <!-- 3 Stage Process Cards -->
+    <g transform="translate(50, 100)">
+      <!-- Stage 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="280" height="240" rx="12" fill="#0B1A2E" stroke="#0066CC" stroke-width="1.5"/>
+        <rect x="20" y="20" width="36" height="36" rx="6" fill="#0066CC"/>
+        <text x="38" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">1</text>
+        <text x="70" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">Part Infeed &amp; Align</text>
+        <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">3D Structured Light Vision scans part orientation with sub-millimeter precision.</text>
+        <rect x="20" y="170" width="240" height="45" rx="6" fill="rgba(255,255,255,0.04)"/>
+        <text x="32" y="198" font-family="monospace" font-size="12" fill="#38BDF8">Telemetry: 120 ms Point Cloud</text>
+      </g>
+
+      <!-- Arrow 1 -> 2 -->
+      <path d="M 295 120 L 335 120" stroke="#38BDF8" stroke-width="3" stroke-dasharray="4 4"/>
+      <polygon points="340,120 330,114 330,126" fill="#38BDF8"/>
+
+      <!-- Stage 2 -->
+      <g transform="translate(350, 0)">
+        <rect width="280" height="240" rx="12" fill="#0B1A2E" stroke="#FF6B00" stroke-width="1.5"/>
+        <rect x="20" y="20" width="36" height="36" rx="6" fill="#FF6B00"/>
+        <text x="38" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">2</text>
+        <text x="70" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">Coordinated Motion</text>
+        <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">6-Axis Articulation with active force feedback executes contouring.</text>
+        <rect x="20" y="170" width="240" height="45" rx="6" fill="rgba(255,255,255,0.04)"/>
+        <text x="32" y="198" font-family="monospace" font-size="12" fill="#FDBA74">EtherCAT Loop: 250 µs Cycle</text>
+      </g>
+
+      <!-- Arrow 2 -> 3 -->
+      <path d="M 645 120 L 685 120" stroke="#38BDF8" stroke-width="3" stroke-dasharray="4 4"/>
+      <polygon points="690,120 680,114 680,126" fill="#38BDF8"/>
+
+      <!-- Stage 3 -->
+      <g transform="translate(700, 0)">
+        <rect width="280" height="240" rx="12" fill="#0B1A2E" stroke="#10B981" stroke-width="1.5"/>
+        <rect x="20" y="20" width="36" height="36" rx="6" fill="#10B981"/>
+        <text x="38" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="18" fill="#FFFFFF" text-anchor="middle">3</text>
+        <text x="70" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="16" fill="#FFFFFF">Outfeed &amp; Palletize</text>
+        <text x="20" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8">Finished assembly verified and transferred via autonomous AMR fleet.</text>
+        <rect x="20" y="170" width="240" height="45" rx="6" fill="rgba(255,255,255,0.04)"/>
+        <text x="32" y="198" font-family="monospace" font-size="12" fill="#6EE7B7">Transit: Natural LiDAR SLAM</text>
+      </g>
     </g>
 
-    <!-- Blueprint Corner Marks -->
-    <path d="M 20 40 L 20 20 L 40 20" stroke="#60A5FA" stroke-width="2" fill="none"/>
-    <path d="M 1020 40 L 1020 20 L 1000 20" stroke="#60A5FA" stroke-width="2" fill="none"/>
-    <path d="M 20 380 L 20 400 L 40 400" stroke="#60A5FA" stroke-width="2" fill="none"/>
-    <path d="M 1020 380 L 1020 400 L 1000 400" stroke="#60A5FA" stroke-width="2" fill="none"/>
-    
-    <text x="40" y="50" font-family="monospace" font-size="13" fill="#64748B" letter-spacing="1">KINEMATIC SCHEMATIC // AXIS SPECIFICATION</text>
-    <text x="40" y="385" font-family="monospace" font-size="12" fill="#64748B">PRECISION MOTION ENGINE // INDUS SYSTEM LABS</text>
+    <text x="40" y="415" font-family="monospace" font-size="11" fill="#64748B">FIELD INTEGRATION DOSSIER // WORKCELL OPERATING ENVELOPE</text>
   </g>
 
-  <!-- 4 Technical Metric Cards -->
+  <!-- 4 Metrics Cards -->
   <g transform="translate(80, 860)">
-    <!-- Metric 1 -->
+    
     <g transform="translate(0, 0)">
       <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">In-Mold Extraction Time</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#38BDF8" font-weight="800">&lt; 0.6 Seconds Fast Entry/Exit</text>
+      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Extraction Speed</text>
+      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">&lt; 0.6 s In-Mold Part Extraction</text>
       <line x1="24" y1="105" x2="80" y2="105" stroke="#0066CC" stroke-width="2"/>
     </g>
-
-    <!-- Metric 2 -->
     <g transform="translate(266, 0)">
       <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Arm Material</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#38BDF8" font-weight="800">Carbon-Fiber Reinforced Composite Profile</text>
+      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Arm Construction</text>
+      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">Carbon-Fiber Reinforced Composite Profile</text>
       <line x1="24" y1="105" x2="80" y2="105" stroke="#FF6B00" stroke-width="2"/>
     </g>
-
-    <!-- Metric 3 -->
     <g transform="translate(532, 0)">
       <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Drive System</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#38BDF8" font-weight="800">High-Dynamics Dual Linear Servo Actuators</text>
+      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Drive Technology</text>
+      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">High-Dynamics Dual Linear Servo Actuators</text>
       <line x1="24" y1="105" x2="80" y2="105" stroke="#10B981" stroke-width="2"/>
     </g>
-
-    <!-- Metric 4 -->
     <g transform="translate(798, 0)">
       <rect width="242" height="135" rx="12" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Press Tonnage Range</text>
-      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="#FDBA74" font-weight="800">Suitable for 150 Ton to 1,200 Ton Presses</text>
+      <text x="24" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94A3B8" font-weight="600">Press Compatibility</text>
+      <text x="24" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" fill="#38BDF8" font-weight="800">Suitable for 150 Ton to 1,200 Ton Presses</text>
       <line x1="24" y1="105" x2="80" y2="105" stroke="#F59E0B" stroke-width="2"/>
     </g>
   </g>
 
-  <!-- Footer Banner -->
-  <g transform="translate(80, 1040)">
+  <!-- Footer -->
+  <g transform="translate(80, 1050)">
     <line x1="0" y1="0" x2="1040" y2="0" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-    <text x="0" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#64748B" font-weight="600">PRECISION MOTION SYSTEMS // INDUSTRIAL ROBOTICS DIVISION</text>
-    <text x="1040" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#38BDF8" font-weight="700" text-anchor="end">indusrobotics.com</text>
+    <text x="0" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748B" font-weight="600">SECTOR ENGINEERING // AUTOMATION DEPLOYMENT SERIES</text>
+    <text x="1040" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#38BDF8" font-weight="700" text-anchor="end">indusrobotics.com</text>
   </g>
 </svg>
