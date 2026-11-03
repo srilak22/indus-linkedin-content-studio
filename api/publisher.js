@@ -2,9 +2,12 @@
 // INDUS-LINKEDIN-CONTENT-STUDIO/api/publisher.js
 // Vercel Serverless Function bridging Content Studio UI to Google Sheets and Google Apps Script
 
+import fs from "fs";
+import path from "path";
+
 const DEFAULT_APPS_SCRIPT_URL =
   process.env.GOOGLE_APPS_SCRIPT_URL ||
-  "https://script.google.com/macros/s/AKfycbyO4AzoxaoBU99WFQUDNbRV-4r6UmBTLPSsgeZiCS4T2AyObnUfNcYhLv-gcVnAMYgRKg/exec";
+  "https://script.google.com/macros/s/AKfycbw8NhfkPJGeYu4NAaisxN3FHaWmAVlZTmEO2x1CsBirRPvt5pQjI5zNv3qVXqEA2W1a/exec";
 
 const DEFAULT_SPREADSHEET_ID =
   process.env.GOOGLE_SPREADSHEET_ID || "1S-ApP83X9Y1-nXwim0tDNGn72wuhVn4PSbaWkcXlH48";
@@ -23,6 +26,58 @@ const TIMEZONE = "Asia/Kolkata";
 // In-memory queue cache for resilient offline / test-mode execution
 const localQueueCache = new Map();
 
+function ensureQueueInitialized() {
+  if (localQueueCache.size > 0) return;
+  try {
+    const candidatePaths = [
+      path.join(process.cwd(), "post-data", "posts.json"),
+      path.join(process.cwd(), "INDUS-LINKEDIN-CONTENT-STUDIO", "post-data", "posts.json"),
+      path.join(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1")), "..", "post-data", "posts.json")
+    ];
+    const dataPath = candidatePaths.find(p => fs.existsSync(p));
+    if (dataPath && fs.existsSync(dataPath)) {
+      const rawPosts = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+      let currentDay = new Date("2026-11-04T09:30:00+05:30");
+      let slot = 0;
+
+      rawPosts.forEach((p, idx) => {
+        while (currentDay.getDay() === 0 || currentDay.getDay() === 6) {
+          currentDay.setDate(currentDay.getDate() + 1);
+        }
+
+        const yyyy = currentDay.getFullYear();
+        const mm = String(currentDay.getMonth() + 1).padStart(2, "0");
+        const dd = String(currentDay.getDate()).padStart(2, "0");
+        const schedDate = `${yyyy}-${mm}-${dd}`;
+        const schedTime = slot === 0 ? "09:30" : "15:30";
+
+        localQueueCache.set(p.id, {
+          id: p.id,
+          category: p.category_name || "General Robotics",
+          title: p.title,
+          caption: p.caption,
+          hashtags: Array.isArray(p.hashtags) ? p.hashtags : [p.hashtags],
+          imageUrl: `https://indus-linkedin-content-studio.vercel.app/assets/visuals/visual-${String(idx + 1).padStart(3, "0")}.svg`,
+          mediaType: "IMAGE",
+          scheduledDate: schedDate,
+          scheduledTime: schedTime,
+          approvalStatus: "APPROVED",
+          publishingStatus: "QUEUED",
+          updatedAt: new Date().toISOString()
+        });
+
+        slot++;
+        if (slot > 1) {
+          slot = 0;
+          currentDay.setDate(currentDay.getDate() + 1);
+        }
+      });
+    }
+  } catch (err) {
+    console.warn("Could not pre-seed queue cache:", err);
+  }
+}
+
 function setCorsHeaders(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
@@ -31,6 +86,7 @@ function setCorsHeaders(res) {
 
 export default async function handler(req, res) {
   setCorsHeaders(res);
+  ensureQueueInitialized();
 
   if (req.method === "OPTIONS") {
     return res.status(200).end();
