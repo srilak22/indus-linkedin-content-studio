@@ -1,5 +1,5 @@
 # INDUS LINKEDIN AUTO-PUBLISHER & GOOGLE SHEETS INTEGRATION REPORT
-Generated on: 2026-11-03 16:28:33
+Generated on: 2026-11-03 18:30:38
 Target Spreadsheet: `INDUS_LINKEDIN_AUTO_PUBLISHER` (ID: `1S-ApP83X9Y1-nXwim0tDNGn72wuhVn4PSbaWkcXlH48`)
 Spreadsheet URL: https://docs.google.com/spreadsheets/d/1S-ApP83X9Y1-nXwim0tDNGn72wuhVn4PSbaWkcXlH48/edit?usp=sharing
 
