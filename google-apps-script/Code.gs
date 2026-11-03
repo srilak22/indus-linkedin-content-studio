@@ -94,6 +94,10 @@ function doPost(e) {
         result = setupSpreadsheetSchema();
         break;
 
+      case 'install_trigger':
+        result = installPublishingTrigger();
+        break;
+
       case 'test_connection':
         result = { success: true, message: 'Connected to INDUS LinkedIn Auto-Publisher', version: '2.0.0' };
         break;
@@ -1062,4 +1066,11 @@ function installPublishingTrigger() {
     .create();
 
   Logger.log('Successfully installed 1-minute time-driven trigger for processScheduledPosts.');
+}
+
+/**
+ * Setup Minute Trigger (Alias for installPublishingTrigger)
+ */
+function setupMinuteTrigger() {
+  return installPublishingTrigger();
 }
